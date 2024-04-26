@@ -1,3 +1,3 @@
-# metality-united.github.io
+https://metality.band のリポジトリ
 
-design : かけだしちゃん
+Design : かけだしちゃん
