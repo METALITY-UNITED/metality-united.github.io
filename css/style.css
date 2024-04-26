@@ -1,0 +1,716 @@
+@charset "UTF-8";
+/* 文字コードの指定 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+@media (max-width: 769px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+
+/* コンテナのスタイル */
+.container {
+  max-width: 112rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+}
+
+/* 文章のスタイル */
+p {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 見出し */
+h2 {
+  font-size: 5rem;
+  font-weight: 800;
+  font-family: 'JOST', 'Noto Sans JP', sans-serif;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 769px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+
+
+
+/* 背景たち */
+.background {
+  background-color: #000;
+}
+
+.under-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("../images/AdobeStock_680351496.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+@media (max-width: 769px) {
+  .under-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("../images/AdobeStock_680351496.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
+
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+
+
+/* ヘッダー */
+
+/* PC版ナビゲーション */
+.header-logo {
+  width: 30%;
+  height: auto;
+}
+
+
+
+.header {
+  display: flex;
+  padding-left: 80px;
+  padding-right: 80px;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+/* PCの時にはハンバーガーアイコンを表示させない */
+@media (min-width: 769px) {
+  .sp-nav {
+    display: none;
+  }
+}
+
+/* PC版ナビゲーションバー */
+.pc-nav-list {
+  display: flex;
+  font-weight: 600;
+}
+
+
+.pc-nav-list li {
+  font-size: 2rem;
+  margin: 1rem;
+  list-style: none;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+.pc-nav-list li:hover {
+  opacity: 0.75;
+}
+
+
+/* SP版ナビゲーション */
+
+@media (max-width: 769px) {
+  .header {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 769px) {
+  .header-logo {
+    width: 70%;
+    height: auto;
+  }
+}
+
+/* SPの時にナビゲーションを出さないようにする */
+@media (max-width: 769px) {
+  .pc-nav {
+    display: none;
+  }
+
+  .sp-nav {
+    font-size: 3rem;
+    position: relative;
+  }
+
+}
+
+.sp-nav-list {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sp-nav-list li {
+  font-size: 2.4rem;
+  padding-bottom: 4rem;
+}
+
+/* SPの時のハンバーガーメニューのチェックボックスを見えなくする*/
+.hamburger-menu-checkbox {
+  display: none;
+}
+
+/* SPの時のハンバーガーメニューのコンテンツの中身*/
+.hamburger-menu-contents {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 7rem;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.hamburger-menu-contents li :hover {
+  opacity: 0.75;
+}
+
+#hamburger:checked~.hamburger-menu-contents {
+  display: block;
+}
+
+
+
+/* キービジュアル */
+.kv {
+  margin-bottom: 80px;
+}
+
+/* カルーセル */
+.splide__slide img {
+  height: auto;
+  width: 100%;
+}
+
+
+/* ニュース*/
+.news {
+  margin-bottom: 80px;
+}
+
+/* ニュース　スマホ版だけ左右に余白をつける*/
+@media (max-width: 769px) {
+  .news {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* リリース */
+.release {
+  margin-bottom: 80px;
+}
+
+/* リリース　スマホ版だけ左右に余白をつける*/
+@media (max-width: 769px) {
+  .release {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+.release-contents-item {
+  width: 100%;
+  height: auto;
+  text-align: center;
+
+}
+
+.release-contents-item p {
+  margin-top: 1rem;
+}
+
+/* ジャケットにカーソルを当てると縮む */
+
+.release-contents-item-img-field {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.release-contents-item img {
+  width: 100%;
+  cursor: pointer;
+  transition: transform .2s ease;
+
+}
+
+.release-contents-item img:hover {
+  transform: scale(1.1, 1.1);
+}
+
+/* CD情報を横並びにする */
+.release-contents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+
+/* スマホ　CD情報を縦並びにする  */
+
+@media (max-width: 769px) {
+  .release-contents {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 40px;
+  }
+}
+
+
+/* バンド */
+
+@media (max-width: 769px) {
+  .band-h2 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.band-contents {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin-bottom: 40px;
+}
+
+/* スマホ　情報を縦並びにする  */
+@media (max-width: 769px) {
+  .band-contents {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 40px;
+  }
+}
+
+/* 紹介文とイラストの間 */
+.member-contents {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: 600px;
+}
+
+@media (max-width: 769px) {
+  .member-contents {
+    order: 2;
+    grid-template-rows: auto auto auto;
+    height: auto;
+  }
+}
+
+/* メンバー名 */
+.member-contents-name {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 769px) {
+  .member-contents-name {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* XとYouTubeアカウント */
+.member-contents-account {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+
+/* スマホ　情報を縦並びにする  */
+@media (max-width: 769px) {
+  .member-contents-account {
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+.member-contents-x {
+  padding: 1rem;
+  background-color: black;
+  border: 0.5px solid white;
+  margin-right: 10px;
+}
+
+.member-contents-x:hover {
+  opacity: 0.75;
+}
+
+
+.member-contents-youtube {
+  padding: 1rem;
+  background-color: #ff0000;
+  border: 0.5px solid #960000;
+}
+
+.member-contents-youtube :hover {
+  opacity: 0.75;
+}
+
+.member-contents-youtube a :hover {
+  opacity: 1;
+}
+
+.member-contents-website {
+  padding: 1rem;
+  background-color: black;
+  border: 0.5px solid white;
+}
+
+/* 紹介文 */
+.member-contents-introduction-field {
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  padding: 2rem;
+  background: rgba(23, 23, 23, 0.7);
+  overflow: auto;
+}
+
+@media (max-width: 769px) {
+  .member-contents-Introduction-field {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+  }
+}
+
+
+
+/* メンバーイラスト */
+.member-illust {
+  background-color: #000;
+  width: 515px;
+  height: 600px;
+}
+
+.member-illust img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+@media (min-width: 769px) {
+  .band-logo-sp {
+    display: none;
+  }
+}
+
+
+
+
+/* メンバーイラストスマホ版　表示順を変えてメンバー紹介の上にイラストを持ってくる */
+@media (max-width: 769px) {
+  .member-illust {
+    width: 100%;
+    height: auto;
+    order: 1;
+  }
+}
+
+
+@media (max-width: 769px) {
+  .member-illust img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 769px) {
+  .band-logo-pc {
+    display: none;
+  }
+}
+
+
+/* 他のメンバー サムネ*/
+.member {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.member img {
+  width: 80%;
+  border: 3px solid #fff;
+}
+
+@media (max-width: 769px) {
+  .member {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 769px) {
+  .member img {
+    width: 80%;
+    margin-bottom: 10px;
+    border: 0.5px solid #fff;
+  }
+}
+
+/* 切り替え */
+
+.tab01 {
+  width: 100%;
+  margin-bottom: 160px;
+}
+
+
+.tab-member:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab-member"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_contents {
+  display: none;
+}
+
+/*選択されているタブを表示*/
+#tab-senri:checked~.tab01 #tab-senri,
+#tab-sintone:checked~.tab01 #tab-sintone,
+#tab-alse:checked~.tab01 #tab-alse,
+#tab-ginko:checked~.tab01 #tab-ginko,
+#tab-niu:checked~.tab01 #tab-niu,
+#tab-metalityunited:checked~.tab01 #tab-metalityunited {
+  display: block;
+}
+
+/*表示されているメンバーのサムネを暗くして白線を細くする*/
+#tab-metalityunited:checked~.member #samune-logo,
+#tab-senri:checked~.member #samune-senri,
+#tab-sintone:checked~.member #samune-sintone,
+#tab-alse:checked~.member #samune-alse,
+#tab-ginko:checked~.member #samune-ginko,
+#tab-niu:checked~.member #samune-niu {
+  opacity: 0.5;
+  border: 0.5px solid #fff;
+}
+
+
+
+
+/* CD紹介ページ */
+
+
+
+.music {
+  /* width: 100vw;
+  margin: 0 calc(50% - 50vw); */
+  background-image: url("../images/musichaikei.jpg");
+  background-size: cover;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 769px) {
+  .music {
+    background-image: url("../images/musichaikei.jpg");
+    background-size: contain;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+.music-introduction {
+  text-align: center;
+}
+
+.music-introduction img {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 769px) {
+  .music-introduction img {
+    margin-bottom: 20px;
+  }
+}
+
+
+.music-copy {
+  margin-bottom: 20px;
+}
+
+.music img {
+  width: 50%;
+}
+
+@media (max-width: 769px) {
+  .music img {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.music-title-nightofdeath {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #b72222;
+}
+
+.music-title-lostblessing {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #6C5C89;
+}
+
+.music-title-blackwing {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.booth {
+  margin-bottom: 80px;
+}
+
+.booth a {
+  text-decoration: underline;
+}
+
+@media (max-width: 769px) {
+  .booth {
+    margin-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 769px) {
+  .booth a {
+    text-decoration: underline;
+  }
+}
+
+.track-flex {
+  display: flex;
+}
+
+@media (max-width: 769px) {
+  .track-flex {
+    display: block;
+  }
+}
+
+
+
+.track {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 769px) {
+  .track {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.track-list {
+  margin-bottom: 40px;
+}
+
+.position {
+  margin: 0 80px;
+}
+
+@media (max-width: 769px) {
+  .position {
+    margin: 0 auto;
+  }
+}
+
+
+/* 視聴動画 */
+.youtube {
+  text-align: center;
+  padding-top: 40px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  margin-bottom: 80px;
+}
+
+.youtube iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* TOPに戻るアイコン */
+.top-icon {
+  font-size: 3rem;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+
+/* フッター */
+.footer {
+  font-size: small;
+  font-weight: 300;
+  text-align: center;
+  background-color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
