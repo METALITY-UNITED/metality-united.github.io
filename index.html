@@ -640,7 +640,21 @@
             });
         });
     </script>
-
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyBaT_gFpikIY0gKokTD8zmBcYXG-DOAZHk",
+            authDomain: "metality-united.firebaseapp.com",
+            projectId: "metality-united",
+            storageBucket: "metality-united.appspot.com",
+            messagingSenderId: "580459999961",
+            appId: "1:580459999961:web:8de1208d01ae087751c4c8",
+            measurementId: "G-BBTGDSMLKL"
+        };
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </body>
 
 </html>
