@@ -63,7 +63,7 @@ h2 {
 }
 
 .under-background {
-  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("../images/AdobeStock_680351496.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("../images/background/AdobeStock_680351496.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -71,7 +71,7 @@ h2 {
 
 @media (max-width: 769px) {
   .under-background {
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("../images/AdobeStock_680351496.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("../images/background/AdobeStock_680351496.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -554,7 +554,7 @@ input[name="tab-member"] {
 .music {
   /* width: 100vw;
   margin: 0 calc(50% - 50vw); */
-  background-image: url("../images/musichaikei.jpg");
+  background-image: url("../images/background/musichaikei.webp");
   background-size: cover;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -563,7 +563,7 @@ input[name="tab-member"] {
 
 @media (max-width: 769px) {
   .music {
-    background-image: url("../images/musichaikei.jpg");
+    background-image: url("../images/background/musichaikei.webp");
     background-size: contain;
     padding-top: 20px;
     padding-bottom: 20px;
