@@ -351,6 +351,7 @@ img {
 /* XとYouTubeアカウント */
 .member-contents-account {
   display: flex;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -373,7 +374,6 @@ img {
   padding: 1rem;
   background-color: black;
   border: 0.5px solid white;
-  margin-right: 10px;
 }
 
 .member-contents-x:hover {
