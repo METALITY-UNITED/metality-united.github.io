@@ -4,558 +4,544 @@
 <html lang="ja" prefix="og:http://ogp.me/ns#">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>METALITY UNITED</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#000">
-    <meta name="description" content="シンフォニックメロディックパワーメタルバンド METALITY UNITED のWebサイト">
-    <meta property="og:title" content="METALITY UNITED" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://metality.band/" />
-    <meta property="og:image" content="https://metality.band/images/logo-band-ogp.png" />
-    <meta property="og:description" content="シンフォニックメロディックパワーメタルバンド METALITY UNITED のWebサイト" />
-    <meta property="og:site_name" content="METALITY UNITED" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>METALITY UNITED</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000">
+  <meta name="description" content="シンフォニックメロディックパワーメタルバンド METALITY UNITED のWebサイト">
+  <meta property="og:title" content="METALITY UNITED" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://metality.band/" />
+  <meta property="og:image" content="https://metality.band/images/logo-band-ogp.png" />
+  <meta property="og:description" content="シンフォニックメロディックパワーメタルバンド METALITY UNITED のWebサイト" />
+  <meta property="og:site_name" content="METALITY UNITED" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@metality_united" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@metality_united" />
 
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/d925e0b3e6.js" crossorigin="anonymous"></script>
-    <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d925e0b3e6.js" crossorigin="anonymous"></script>
+  <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="icon/favicon.ico">
-    <link rel="icon" sizes="192x192" href="icon/android-chrome-192x192.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="icon/favicon.ico">
+  <link rel="icon" sizes="192x192" href="icon/android-chrome-192x192.png">
 </head>
 
 <body>
-    <!-- 背景 -->
-    <div class="background">
-        <!--コンテンツ-->
-        <div class="container">
+  <!-- 背景 -->
+  <div class="background">
+    <!--コンテンツ-->
+    <div class="container">
 
-            <!-- ヘッダー -->
-            {% include header.html %}
+      <!-- ヘッダー -->
+      {% include header.html %}
 
-            <!-- キービジュアル -->
-            <div class="keyvisual">
+      <!-- キービジュアル -->
+      <div class="keyvisual">
 
-                <!-- カルーセル -->
+        <!-- カルーセル -->
 
-                <section class="splide" aria-label="carousel" data-splide='{"type":"loop","perPage":1,"autoplay":true}'>
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <a href="https://www.youtube.com/watch?v=QLmD760H7RQ" target="_blank">
-                                    <img src="images/top/BLACKWINGS.webp" alt="キービジュアル BLACK WING" />
-                                </a>
-                            </li>
-                            <li class="splide__slide">
-                                <a href="https://www.youtube.com/watch?v=mKag9cJbWIo" target="_blank">
-                                    <img src="images/top/NIGHTOFDEATH.webp" alt="キービジュアル NIGHT OF DEATH" />
-                                </a>
-                            </li>
-                            <li class="splide__slide">
-                                <a href="https://www.youtube.com/watch?v=EeEPwV6ucog" target="_blank">
-                                    <img src="images/top/LOSTBLESSING.webp" alt="キービジュアル LOST BLESSING" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-
-
-            <!-- News -->
-            <div class="news" id="news">
-                <h2>News</h2>
-                <section>
-                    {% for post in site.posts limit:3 %}
-                    <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} {{ post.title }}</a>
-                    {% endfor %}
-                </section>
-            </div>
-
-
-            <!-- Release -->
-            <div class="release" id="release">
-                <!-- Release見出し -->
-                <h2>Release</h2>
-                <!-- Release紹介 -->
-                <div class="release-contents">
-                    <div class="release-contents-item">
-                        <a href="blackwings.html">
-                            <div class="release-contents-item-img-field">
-                                <img src="images/work/BLACKWINGS.webp" alt="BLACK WINGS情報ページへのリンク" />
-                            </div>
-                            <p>BLACK WINGS</p>
-                        </a>
-                    </div>
-                    <div class="release-contents-item">
-                        <a href="lostblessing.html">
-                            <div class="release-contents-item-img-field">
-                                <img src="images/work/LOSTBLESSING.webp" alt="LOST BLESSING情報ページへのリンク" />
-                            </div>
-                            <p>LOST BLESSING</p>
-                        </a>
-                    </div>
-                    <div class="release-contents-item">
-                        <a href="nightofdeath.html">
-                            <div class="release-contents-item-img-field">
-                                <img src="images/work/NIGHTOFDEATH.webp" alt="NIGHT OF DEATH情報ページへのリンク" />
-                            </div>
-                            <p>NIGHT OF DEATH</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div><!--背景画像の為に一旦コンテナーを解除 -->
-
-        <!--火の粉の背景画像 -->
-        <div class="under-background">
-            <div class="container"><!--コンテンツ -->
-                <!-- Band -->
-                <div class="band" id="band">
-                    <div class="bandclass" id="bandclass">
-                        <!-- Band見出し -->
-                        <div class="band-h2">
-                            <h2>Band</h2>
-                        </div>
-
-                        <input id="tab-senri" type="radio" name="tab-member">
-                        <input id="tab-sintone" type="radio" name="tab-member">
-                        <input id="tab-alse" type="radio" name="tab-member">
-                        <input id="tab-ginko" type="radio" name="tab-member">
-                        <input id="tab-niu" type="radio" name="tab-member">
-                        <input id="tab-metalityunited" type="radio" name="tab-member" checked>
-
-
-                        <!-- 他のメンバーイラスト -->
-                        <div class="member">
-
-                            <label class="tab-member" for="tab-metalityunited">
-                                <a href="#bandclass" onclick="scrollToBandClass('tab-metalityunited')">
-                                    <div><img src="images/logo-samune.png" id="samune-logo" alt="ロゴサムネ" /></div>
-                                </a>
-                            </label>
-
-                            <label class="tab-member" for="tab-senri">
-                                <a href="#bandclass" onclick="scrollToBandClass('tab-senri')">
-                                    <div>
-                                        <img src="images/member/member-small-senri.webp" id="samune-senri"
-                                            alt="成瀬センリサムネイラスト" />
-                                    </div>
-                                </a>
-                            </label>
-
-                            <label class="tab-member" for="tab-sintone">
-                                <a href="#bandclass" onclick="scrollToBandClass('tab-sintone')">
-                                    <div>
-                                        <img src="images/member/member-small-sintone.webp" id="samune-sintone"
-                                            alt="しんとーんサムネイラスト" />
-                                    </div>
-                                </a>
-                            </label>
-
-                            <label class="tab-member" for="tab-alse">
-                                <a href="#bandclass" onclick="scrollToBandClass('tab-alse')">
-                                    <div>
-                                        <img src="images/member/member-small-aruse.webp" id="samune-alse"
-                                            alt="あるせサムネイラスト" />
-                                    </div>
-                                </a>
-                            </label>
-
-
-                            <label class="tab-member" for="tab-ginko">
-                                <a href="#bandclass" onclick="scrollToBandClass('tab-ginko')">
-                                    <div>
-                                        <img src="images/member/member-small-ginko.webp" id="samune-ginko"
-                                            alt="頬白ギンコサムネイラスト" />
-                                    </div>
-                                </a>
-                            </label>
-
-                            <label class="tab-member" for="tab-niu">
-                                <a href="#bandclass" onclick="scrollToBandClass('tab-niu')">
-                                    <div>
-                                        <img src="images/member/member-small-niu.webp" id="samune-niu"
-                                            alt="niuサムネイラスト" />
-                                    </div>
-                                </a>
-                            </label>
-                        </div>
-
-                        <!-- 切り替え -->
-                        <div class="tab01" id="tab01">
-                            <!-- 成瀬センリ-->
-                            <div class="tab_contents" id="tab-senri">
-
-                                <div class="band-contents">
-                                    <!-- アカウント達・紹介文 -->
-                                    <div class="member-contents">
-
-                                        <!-- 名前 -->
-                                        <div class="member-contents-name">
-                                            ボーカル／成瀬センリ
-                                        </div>
-                                        <!-- アカウント達 -->
-                                        <div class="member-contents-account">
-                                            <!-- Xアカウント -->
-                                            <div class="member-contents-x">
-                                                <a href="https://twitter.com/3900senri" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-x-twitter"></i>
-                                                    @3900senri
-                                                </a>
-                                            </div>
-                                            <!-- YouTubeアカウント -->
-                                            <div class="member-contents-youtube">
-                                                <a href="https://www.youtube.com/channel/UCINhXRrneYdfhbz8QQka6WA"
-                                                    target="_blank" rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-youtube"></i>
-                                                    成瀬センリ / Naruse Senri
-                                                </a>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- 紹介文-->
-                                        <div class="member-contents-introduction-field">
-                                            <p> 歌系VTuber。熱い歌と穏やかな時間をあなたに。</p><br>
-                                            <p>Vo・作詞・デザイン・動画担当。</p><br>
-
-                                            <p>【好きなもの】
-                                                音楽 (HR/HM)、写真、 旅行、 ゲーム、 サウナ。 メロスピ歌うこと。 麺類がないと生きていけない。</p>
-                                            <p>【性別】
-                                                麺類</p>
-                                            <p>【FANBOX】</p>
-
-                                            <a href="https://naruse-senri.fanbox.cc/" target="_blank"
-                                                rel="noopener noreferrer">https://t.co/tXelHNJit6</a>
-                                        </div><!-- 紹介文 -->
-                                    </div><!-- アカウント達・紹介文 -->
-
-                                    <!-- メンバーイラスト -->
-                                    <div class="member-illust">
-                                        <img src="images/member/member-large-senri.webp" alt="成瀬センリ" />
-                                    </div>
-
-                                </div><!-- 紹介部分 -->
-                            </div>
-
-                            <!-- しんとーん -->
-                            <div class="tab_contents" id="tab-sintone">
-                                <div class="band-contents">
-                                    <!-- アカウント達・紹介文 -->
-                                    <div class="member-contents">
-                                        <!-- 名前 -->
-                                        <div class="member-contents-name">
-                                            ベース／しんとーん
-                                        </div>
-                                        <!-- アカウント達 -->
-                                        <div class="member-contents-account">
-                                            <!-- Xアカウント -->
-                                            <div class="member-contents-x">
-                                                <a href="https://twitter.com/SINTONEmetal" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-x-twitter"></i>
-                                                    @SINTONEmetal
-                                                </a>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- 紹介文 紹介文ボックスの固定がしたい-->
-                                        <div class="member-contents-introduction-field">
-                                            <p>ヘヴィメタルを愛し、ヘヴィメタルに死す。</p>
-                                            <p>意味わからん？うん、俺もわかんない。
-                                                でも、メタルが好きなのは伝わってほしいと願う。</p>
-                                            <br>
-                                            <p>メロディのあるメタルなら何でも聴くけど、ネオクラシカル、
-                                                シンフォニック、ジャーマン、イタリア、ブラジル、北欧、
-                                                テクニカル、プログレッシブ、メロパワ、メロスピ、メロデス辺りの
-                                                キーワードは特に好物が多い。</p>
-
-                                        </div><!-- 紹介文 -->
-
-
-                                    </div><!-- アカウント達・紹介文 -->
-
-                                    <!-- メンバーイラスト -->
-                                    <div class="member-illust">
-                                        <img src="images/member/member-large-sintone.webp" alt="しんとーん" />
-                                    </div>
-
-                                </div><!-- 紹介部分 -->
-                            </div>
-
-                            <!-- あるせ -->
-                            <div class="tab_contents" id="tab-alse">
-                                <div class="band-contents">
-
-                                    <!-- アカウント達・紹介文 -->
-                                    <div class="member-contents">
-
-                                        <!-- 名前 -->
-                                        <div class="member-contents-name">
-                                            ギター&amp;MIX／あるせ
-                                        </div>
-                                        <!-- アカウント達 -->
-                                        <div class="member-contents-account">
-                                            <!-- Xアカウント -->
-                                            <div class="member-contents-x">
-                                                <a href="https://twitter.com/alcestic5150" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-x-twitter"></i>
-                                                    @alcestic5150
-                                                </a>
-                                            </div>
-                                            <!-- YouTubeアカウント -->
-                                            <div class="member-contents-youtube">
-                                                <a href="https://www.youtube.com/@miyatenmk-sounds1691" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-youtube"></i>
-                                                    Miyaten MK-Sounds
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <!-- 紹介文 紹介文ボックスの固定がしたい-->
-                                        <div class="member-contents-introduction-field">
-                                            <p>名前の由来はFのバンド「Alcest」</p>
-                                            <p>メタル教インナーサークル部部長</p>
-                                            <p>METALITY UNITEDのギターリスト&amp;ミキシングエンジニア</p><br>
-                                            <p>【Webサイト】</p>
-                                            <a href="https://miyaten3810.wixsite.com/website" target="_blank"
-                                                rel="noopener noreferrer">https://miyaten3810.wixsite.com/website</a><br>
-
-                                            <h3>趣味</h3>
-                                            <p>モジュラーシンセ収集</p>
-                                            <p>洋画、アニメ、 PCゲーム</p>
-                                            <p>陸の孤島のプライベートスタジオでRec、Mixing、Masteringをしてます</p><br>
-                                            <p>勝負曲</p>
-                                            <p>歌 アニメ 「みなみけ」 より保坂 (小野大輔)が歌うカレーの歌</p>
-                                            <p>ギター→Periphery-its only smile</p>
-                                            <p>ベース→Jamiroquai-space cowboy</p>
-                                            <p>ピアノ→久石譲 - One summers day</p>
-                                        </div><!-- 紹介文 -->
-                                    </div><!-- アカウント達・紹介文 -->
-
-                                    <!-- メンバーイラスト -->
-                                    <div class="member-illust">
-                                        <img src="images/member/member-large-aruse.webp" alt="あるせ" />
-                                    </div>
-                                </div><!-- 紹介部分 -->
-                            </div>
-
-                            <!-- 頬白ギンコ -->
-                            <div class="tab_contents" id="tab-ginko">
-                                <div class="band-contents">
-
-                                    <!-- アカウント達・紹介文 -->
-                                    <div class="member-contents">
-
-                                        <!-- 名前 -->
-                                        <div class="member-contents-name">
-                                            ドラム／頬白ギンコ
-                                        </div>
-                                        <!-- アカウント達 -->
-                                        <div class="member-contents-account">
-                                            <!-- Xアカウント -->
-                                            <div class="member-contents-x">
-                                                <a href="https://twitter.com/GINKO_dr" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-x-twitter"></i>
-                                                    @GINKO_dr
-                                                </a>
-                                            </div>
-                                            <!-- YouTubeアカウント -->
-                                            <div class="member-contents-youtube">
-                                                <a href="https://www.youtube.com/channel/UC-2EabkUYZGT1N3CKJTWG7A"
-                                                    target="_blank" rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-youtube"></i>
-                                                    GINKO Channel
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <!-- 紹介文 紹介文ボックスの固定がしたい-->
-                                        <div class="member-contents-introduction-field">
-                                            <p>バーチャルサメ人間ドラマーのGINKOです</p>
-                                            <p>主に雑談やドラム配信してます</p>
-                                            <p>たまに歌、 稀にギター</p>
-                                            <p> Shark boy GINKO</p>
-                                            <p> Drummer from Japan Follow me if you like it</p><br>
-                                        </div><!-- 紹介文 -->
-                                    </div><!-- アカウント達・紹介文 -->
-
-                                    <!-- メンバーイラスト -->
-                                    <div class="member-illust">
-                                        <img src="images/member/member-large-ginko.webp" alt="頬白ギンコ" />
-                                    </div>
-                                </div><!-- 紹介部分 -->
-                            </div>
-
-                            <!-- niu -->
-                            <div class="tab_contents" id="tab-niu">
-                                <div class="band-contents">
-
-                                    <!-- アカウント達・紹介文 -->
-                                    <div class="member-contents">
-                                        <div class="member-contents-name">
-                                            コンポーザー・アレンジャー／niu
-                                        </div>
-                                        <div class="member-contents-account">
-                                            <div class="member-contents-x">
-                                                <a href="https://twitter.com/niusounds" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-x-twitter"></i>
-                                                    @niusounds
-                                                </a>
-                                            </div>
-                                            <div class="member-contents-youtube">
-                                                <a href="https://www.youtube.com/@metaloz3" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-youtube"></i>
-                                                    メタルおじさん
-                                                </a>
-                                            </div>
-                                            <div class="member-contents-youtube">
-                                                <a href="https://www.youtube.com/@niusounds2370" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-youtube"></i>
-                                                    Niusounds
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <!-- 紹介文 紹介文ボックスの固定がしたい-->
-                                        <div class="member-contents-introduction-field">
-                                            <p>好きなメタルはシンフォニックメタルとメロディックスピードメタルとフォークメタル</p>
-                                            <p>歌ってみたMIX師もはじめました</p>
-                                            <p>吹奏楽部出身で、トロンボーンを吹いていました</p>
-                                            <p>たまにピアノを弾きます</p>
-                                        </div>
-                                    </div><!-- アカウント達・紹介文 -->
-
-
-                                    <!-- メンバーイラスト -->
-                                    <div class="member-illust">
-                                        <img src="images/member/member-large-niu.webp" alt="niu" />
-                                    </div>
-                                </div><!-- 紹介部分 -->
-                            </div>
-
-                            <!-- バンド -->
-                            <div class="tab_contents" id="tab-metalityunited">
-                                <div class="band-contents">
-
-                                    <!-- アカウント達・紹介文 -->
-                                    <div class="member-contents">
-
-                                        <!-- 名前 -->
-                                        <div class="member-contents-name">
-                                            METALITY UNITED
-                                        </div>
-                                        <!-- アカウント達 -->
-                                        <div class="member-contents-account">
-                                            <!-- Xアカウント -->
-                                            <div class="member-contents-x">
-                                                <a href="https://twitter.com/metality_united" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-x-twitter"></i>
-                                                    @metality_united
-                                                </a>
-                                            </div>
-                                            <!-- YouTubeアカウント -->
-                                            <div class="member-contents-youtube">
-                                                <a href="https://www.youtube.com/@METALITYUNITED" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <i class="fa-brands fa-youtube"></i>
-                                                    METALITY UNITED
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <!-- 紹介文 紹介文ボックスの固定がしたい-->
-                                        <div class="member-contents-introduction-field">
-                                            <p>
-                                                メタバース生まれのメタルバンド。<br><br>
-                                                メンバーはYouTubeやVRchatなどで活動をしている。<br><br>
-                                            </p>
-                                        </div><!-- 紹介文 -->
-                                    </div><!-- アカウント達・紹介文 -->
-
-
-                                    <!-- メンバーイラスト -->
-                                    <div class="band-logo-pc">
-                                        <div class="member-illust">
-                                            <img src="images/logo-band.png" alt="METALITYUNITEDロゴ" />
-                                        </div>
-                                    </div>
-                                    <div class="band-logo-sp">
-                                        <div class="member-illust">
-                                            <img src="images/logo-band-sp.png" alt="METALITYUNITEDロゴ" />
-                                        </div>
-                                    </div>
-
-                                </div><!-- 紹介部分 -->
-                            </div>
-                        </div><!-- 切り替え -->
-                        <!-- 紹介部分 -->
-                    </div>
-                </div><!-- Band -->
-
-                <!-- TOPに戻るアイコン -->
-                <a href="#top">
-                    <div class="top-icon">
-                        <i class="fa-solid fa-circle-chevron-up iconsize"></i>
-                    </div>
+        <section class="splide" aria-label="carousel" data-splide='{"type":"loop","perPage":1,"autoplay":true}'>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <a href="https://www.youtube.com/watch?v=QLmD760H7RQ" target="_blank">
+                  <img src="images/top/BLACKWINGS.webp" alt="キービジュアル BLACK WING" />
                 </a>
+              </li>
+              <li class="splide__slide">
+                <a href="https://www.youtube.com/watch?v=mKag9cJbWIo" target="_blank">
+                  <img src="images/top/NIGHTOFDEATH.webp" alt="キービジュアル NIGHT OF DEATH" />
+                </a>
+              </li>
+              <li class="splide__slide">
+                <a href="https://www.youtube.com/watch?v=EeEPwV6ucog" target="_blank">
+                  <img src="images/top/LOSTBLESSING.webp" alt="キービジュアル LOST BLESSING" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
 
-            </div><!-- コンテンツここまで -->
-        </div><!--火の粉の背景画像ここまで -->
 
-        {% include footer.html %}
-    </div><!-- 黒背景ここまで -->
+      <!-- News -->
+      <div class="news" id="news">
+        <h2>News</h2>
+        <section>
+          {% for post in site.posts limit:3 %}
+          <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} {{ post.title }}</a>
+          {% endfor %}
+        </section>
+      </div>
 
-    <!-- splide-->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script>
-        new Splide('.splide').mount();
-    </script>
 
-    <!-- スクロールと内容切り替えを共存させたい クリックされたリンクに対応するラジオボタンがチェックされるようにする-->
-    <script>
-        function scrollToBandClass(menuId) {
-            document.getElementById(menuId).checked = true; // 対応するラジオボタンをチェックする
-            const targetElement = document.getElementById("bandclass");
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-        }
-    </script>
-    <!-- ハンバーガーメニューのスクロールと閉じる動作を一緒にやりたい クリックされたリンクに対応するラジオボタンがチェックされるようにする-->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var links = document.querySelectorAll('.sp-nav-list a');
+      <!-- Release -->
+      <div class="release" id="release">
+        <!-- Release見出し -->
+        <h2>Release</h2>
+        <!-- Release紹介 -->
+        <div class="release-contents">
+          <div class="release-contents-item">
+            <a href="blackwings.html">
+              <div class="release-contents-item-img-field">
+                <img src="images/work/BLACKWINGS.webp" alt="BLACK WINGS情報ページへのリンク" />
+              </div>
+              <p>BLACK WINGS</p>
+            </a>
+          </div>
+          <div class="release-contents-item">
+            <a href="lostblessing.html">
+              <div class="release-contents-item-img-field">
+                <img src="images/work/LOSTBLESSING.webp" alt="LOST BLESSING情報ページへのリンク" />
+              </div>
+              <p>LOST BLESSING</p>
+            </a>
+          </div>
+          <div class="release-contents-item">
+            <a href="nightofdeath.html">
+              <div class="release-contents-item-img-field">
+                <img src="images/work/NIGHTOFDEATH.webp" alt="NIGHT OF DEATH情報ページへのリンク" />
+              </div>
+              <p>NIGHT OF DEATH</p>
+            </a>
+          </div>
+        </div>
+      </div>
 
-            links.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    var hamburgerCheckbox = document.getElementById('hamburger');
-                    if (hamburgerCheckbox.checked) {
-                        hamburgerCheckbox.checked = false;
-                    }
-                });
-            });
+    </div><!--背景画像の為に一旦コンテナーを解除 -->
+
+    <!--火の粉の背景画像 -->
+    <div class="under-background">
+      <div class="container"><!--コンテンツ -->
+        <!-- Band -->
+        <div class="band" id="band">
+          <div class="bandclass" id="bandclass">
+            <!-- Band見出し -->
+            <div class="band-h2">
+              <h2>Band</h2>
+            </div>
+
+            <input id="tab-senri" type="radio" name="tab-member">
+            <input id="tab-sintone" type="radio" name="tab-member">
+            <input id="tab-alse" type="radio" name="tab-member">
+            <input id="tab-ginko" type="radio" name="tab-member">
+            <input id="tab-niu" type="radio" name="tab-member">
+            <input id="tab-metalityunited" type="radio" name="tab-member" checked>
+
+
+            <!-- 他のメンバーイラスト -->
+            <div class="member">
+
+              <label class="tab-member" for="tab-metalityunited">
+                <a href="#bandclass" onclick="scrollToBandClass('tab-metalityunited')">
+                  <div><img src="images/logo-samune.png" id="samune-logo" alt="ロゴサムネ" /></div>
+                </a>
+              </label>
+
+              <label class="tab-member" for="tab-senri">
+                <a href="#bandclass" onclick="scrollToBandClass('tab-senri')">
+                  <div>
+                    <img src="images/member/member-small-senri.webp" id="samune-senri" alt="成瀬センリサムネイラスト" />
+                  </div>
+                </a>
+              </label>
+
+              <label class="tab-member" for="tab-sintone">
+                <a href="#bandclass" onclick="scrollToBandClass('tab-sintone')">
+                  <div>
+                    <img src="images/member/member-small-sintone.webp" id="samune-sintone" alt="しんとーんサムネイラスト" />
+                  </div>
+                </a>
+              </label>
+
+              <label class="tab-member" for="tab-alse">
+                <a href="#bandclass" onclick="scrollToBandClass('tab-alse')">
+                  <div>
+                    <img src="images/member/member-small-aruse.webp" id="samune-alse" alt="あるせサムネイラスト" />
+                  </div>
+                </a>
+              </label>
+
+
+              <label class="tab-member" for="tab-ginko">
+                <a href="#bandclass" onclick="scrollToBandClass('tab-ginko')">
+                  <div>
+                    <img src="images/member/member-small-ginko.webp" id="samune-ginko" alt="頬白ギンコサムネイラスト" />
+                  </div>
+                </a>
+              </label>
+
+              <label class="tab-member" for="tab-niu">
+                <a href="#bandclass" onclick="scrollToBandClass('tab-niu')">
+                  <div>
+                    <img src="images/member/member-small-niu.webp" id="samune-niu" alt="niuサムネイラスト" />
+                  </div>
+                </a>
+              </label>
+            </div>
+
+            <!-- 切り替え -->
+            <div class="tab01" id="tab01">
+              <!-- 成瀬センリ-->
+              <div class="tab_contents" id="tab-senri">
+
+                <div class="band-contents">
+                  <!-- アカウント達・紹介文 -->
+                  <div class="member-contents">
+
+                    <!-- 名前 -->
+                    <div class="member-contents-name">
+                      ボーカル／成瀬センリ
+                    </div>
+                    <!-- アカウント達 -->
+                    <div class="member-contents-account">
+                      <!-- Xアカウント -->
+                      <div class="member-contents-x">
+                        <a href="https://twitter.com/3900senri" target="_blank" rel="noopener noreferrer">
+                          <i class="fa-brands fa-x-twitter"></i>
+                          @3900senri
+                        </a>
+                      </div>
+                      <!-- YouTubeアカウント -->
+                      <div class="member-contents-youtube">
+                        <a href="https://www.youtube.com/channel/UCINhXRrneYdfhbz8QQka6WA" target="_blank"
+                          rel="noopener noreferrer">
+                          <i class="fa-brands fa-youtube"></i>
+                          成瀬センリ / Naruse Senri
+                        </a>
+                      </div>
+                    </div>
+
+
+                    <!-- 紹介文-->
+                    <div class="member-contents-introduction-field">
+                      <p> 歌系VTuber。熱い歌と穏やかな時間をあなたに。</p><br>
+                      <p>Vo・作詞・デザイン・動画担当。</p><br>
+
+                      <p>【好きなもの】
+                        音楽 (HR/HM)、写真、 旅行、 ゲーム、 サウナ。 メロスピ歌うこと。 麺類がないと生きていけない。</p>
+                      <p>【性別】
+                        麺類</p>
+                      <p>【FANBOX】</p>
+
+                      <a href="https://naruse-senri.fanbox.cc/" target="_blank"
+                        rel="noopener noreferrer">https://t.co/tXelHNJit6</a>
+                    </div><!-- 紹介文 -->
+                  </div><!-- アカウント達・紹介文 -->
+
+                  <!-- メンバーイラスト -->
+                  <div class="member-illust">
+                    <img src="images/member/member-large-senri.webp" alt="成瀬センリ" />
+                  </div>
+
+                </div><!-- 紹介部分 -->
+              </div>
+
+              <!-- しんとーん -->
+              <div class="tab_contents" id="tab-sintone">
+                <div class="band-contents">
+                  <!-- アカウント達・紹介文 -->
+                  <div class="member-contents">
+                    <!-- 名前 -->
+                    <div class="member-contents-name">
+                      ベース／しんとーん
+                    </div>
+                    <!-- アカウント達 -->
+                    <div class="member-contents-account">
+                      <!-- Xアカウント -->
+                      <div class="member-contents-x">
+                        <a href="https://twitter.com/SINTONEmetal" target="_blank" rel="noopener noreferrer">
+                          <i class="fa-brands fa-x-twitter"></i>
+                          @SINTONEmetal
+                        </a>
+                      </div>
+                    </div>
+
+
+                    <!-- 紹介文 紹介文ボックスの固定がしたい-->
+                    <div class="member-contents-introduction-field">
+                      <p>ヘヴィメタルを愛し、ヘヴィメタルに死す。</p>
+                      <p>意味わからん？うん、俺もわかんない。
+                        でも、メタルが好きなのは伝わってほしいと願う。</p>
+                      <br>
+                      <p>メロディのあるメタルなら何でも聴くけど、ネオクラシカル、
+                        シンフォニック、ジャーマン、イタリア、ブラジル、北欧、
+                        テクニカル、プログレッシブ、メロパワ、メロスピ、メロデス辺りの
+                        キーワードは特に好物が多い。</p>
+
+                    </div><!-- 紹介文 -->
+
+
+                  </div><!-- アカウント達・紹介文 -->
+
+                  <!-- メンバーイラスト -->
+                  <div class="member-illust">
+                    <img src="images/member/member-large-sintone.webp" alt="しんとーん" />
+                  </div>
+
+                </div><!-- 紹介部分 -->
+              </div>
+
+              <!-- あるせ -->
+              <div class="tab_contents" id="tab-alse">
+                <div class="band-contents">
+
+                  <!-- アカウント達・紹介文 -->
+                  <div class="member-contents">
+
+                    <!-- 名前 -->
+                    <div class="member-contents-name">
+                      ギター&amp;MIX／あるせ
+                    </div>
+                    <!-- アカウント達 -->
+                    <div class="member-contents-account">
+                      <!-- Xアカウント -->
+                      <div class="member-contents-x">
+                        <a href="https://twitter.com/alcestic5150" target="_blank" rel="noopener noreferrer">
+                          <i class="fa-brands fa-x-twitter"></i>
+                          @alcestic5150
+                        </a>
+                      </div>
+                      <!-- YouTubeアカウント -->
+                      <div class="member-contents-youtube">
+                        <a href="https://www.youtube.com/@miyatenmk-sounds1691" target="_blank"
+                          rel="noopener noreferrer">
+                          <i class="fa-brands fa-youtube"></i>
+                          Miyaten MK-Sounds
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- 紹介文 紹介文ボックスの固定がしたい-->
+                    <div class="member-contents-introduction-field">
+                      <p>名前の由来はFのバンド「Alcest」</p>
+                      <p>メタル教インナーサークル部部長</p>
+                      <p>METALITY UNITEDのギターリスト&amp;ミキシングエンジニア</p><br>
+                      <p>【Webサイト】</p>
+                      <a href="https://miyaten3810.wixsite.com/website" target="_blank"
+                        rel="noopener noreferrer">https://miyaten3810.wixsite.com/website</a><br>
+
+                      <h3>趣味</h3>
+                      <p>モジュラーシンセ収集</p>
+                      <p>洋画、アニメ、 PCゲーム</p>
+                      <p>陸の孤島のプライベートスタジオでRec、Mixing、Masteringをしてます</p><br>
+                      <p>勝負曲</p>
+                      <p>歌 アニメ 「みなみけ」 より保坂 (小野大輔)が歌うカレーの歌</p>
+                      <p>ギター→Periphery-its only smile</p>
+                      <p>ベース→Jamiroquai-space cowboy</p>
+                      <p>ピアノ→久石譲 - One summers day</p>
+                    </div><!-- 紹介文 -->
+                  </div><!-- アカウント達・紹介文 -->
+
+                  <!-- メンバーイラスト -->
+                  <div class="member-illust">
+                    <img src="images/member/member-large-aruse.webp" alt="あるせ" />
+                  </div>
+                </div><!-- 紹介部分 -->
+              </div>
+
+              <!-- 頬白ギンコ -->
+              <div class="tab_contents" id="tab-ginko">
+                <div class="band-contents">
+
+                  <!-- アカウント達・紹介文 -->
+                  <div class="member-contents">
+
+                    <!-- 名前 -->
+                    <div class="member-contents-name">
+                      ドラム／頬白ギンコ
+                    </div>
+                    <!-- アカウント達 -->
+                    <div class="member-contents-account">
+                      <!-- Xアカウント -->
+                      <div class="member-contents-x">
+                        <a href="https://twitter.com/GINKO_dr" target="_blank" rel="noopener noreferrer">
+                          <i class="fa-brands fa-x-twitter"></i>
+                          @GINKO_dr
+                        </a>
+                      </div>
+                      <!-- YouTubeアカウント -->
+                      <div class="member-contents-youtube">
+                        <a href="https://www.youtube.com/channel/UC-2EabkUYZGT1N3CKJTWG7A" target="_blank"
+                          rel="noopener noreferrer">
+                          <i class="fa-brands fa-youtube"></i>
+                          GINKO Channel
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- 紹介文 紹介文ボックスの固定がしたい-->
+                    <div class="member-contents-introduction-field">
+                      <p>バーチャルサメ人間ドラマーのGINKOです</p>
+                      <p>主に雑談やドラム配信してます</p>
+                      <p>たまに歌、 稀にギター</p>
+                      <p> Shark boy GINKO</p>
+                      <p> Drummer from Japan Follow me if you like it</p><br>
+                    </div><!-- 紹介文 -->
+                  </div><!-- アカウント達・紹介文 -->
+
+                  <!-- メンバーイラスト -->
+                  <div class="member-illust">
+                    <img src="images/member/member-large-ginko.webp" alt="頬白ギンコ" />
+                  </div>
+                </div><!-- 紹介部分 -->
+              </div>
+
+              <!-- niu -->
+              <div class="tab_contents" id="tab-niu">
+                <div class="band-contents">
+
+                  <!-- アカウント達・紹介文 -->
+                  <div class="member-contents">
+                    <div class="member-contents-name">
+                      コンポーザー・アレンジャー／niu
+                    </div>
+                    <div class="member-contents-account">
+                      <div class="member-contents-x">
+                        <a href="https://twitter.com/niusounds" target="_blank" rel="noopener noreferrer">
+                          <i class="fa-brands fa-x-twitter"></i>
+                          @niusounds
+                        </a>
+                      </div>
+                      <div class="member-contents-youtube">
+                        <a href="https://www.youtube.com/@metaloz3" target="_blank" rel="noopener noreferrer">
+                          <i class="fa-brands fa-youtube"></i>
+                          メタルおじさん
+                        </a>
+                      </div>
+                      <div class="member-contents-youtube">
+                        <a href="https://www.youtube.com/@niusounds2370" target="_blank" rel="noopener noreferrer">
+                          <i class="fa-brands fa-youtube"></i>
+                          Niusounds
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- 紹介文 紹介文ボックスの固定がしたい-->
+                    <div class="member-contents-introduction-field">
+                      <p>好きなメタルはシンフォニックメタルとメロディックスピードメタルとフォークメタル</p>
+                      <p>歌ってみたMIX師もはじめました</p>
+                      <p>吹奏楽部出身で、トロンボーンを吹いていました</p>
+                      <p>たまにピアノを弾きます</p>
+                    </div>
+                  </div><!-- アカウント達・紹介文 -->
+
+
+                  <!-- メンバーイラスト -->
+                  <div class="member-illust">
+                    <img src="images/member/member-large-niu.webp" alt="niu" />
+                  </div>
+                </div><!-- 紹介部分 -->
+              </div>
+
+              <!-- バンド -->
+              <div class="tab_contents" id="tab-metalityunited">
+                <div class="band-contents">
+
+                  <!-- アカウント達・紹介文 -->
+                  <div class="member-contents">
+
+                    <!-- 名前 -->
+                    <div class="member-contents-name">
+                      METALITY UNITED
+                    </div>
+                    <!-- アカウント達 -->
+                    <div class="member-contents-account">
+                      <!-- Xアカウント -->
+                      <div class="member-contents-x">
+                        <a href="https://twitter.com/metality_united" target="_blank" rel="noopener noreferrer">
+                          <i class="fa-brands fa-x-twitter"></i>
+                          @metality_united
+                        </a>
+                      </div>
+                      <!-- YouTubeアカウント -->
+                      <div class="member-contents-youtube">
+                        <a href="https://www.youtube.com/@METALITYUNITED" target="_blank" rel="noopener noreferrer">
+                          <i class="fa-brands fa-youtube"></i>
+                          METALITY UNITED
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- 紹介文 紹介文ボックスの固定がしたい-->
+                    <div class="member-contents-introduction-field">
+                      <p>
+                        メタバース生まれのメタルバンド。<br><br>
+                        メンバーはYouTubeやVRchatなどで活動をしている。<br><br>
+                      </p>
+                    </div><!-- 紹介文 -->
+                  </div><!-- アカウント達・紹介文 -->
+
+
+                  <!-- メンバーイラスト -->
+                  <div class="band-logo-pc">
+                    <div class="member-illust">
+                      <img src="images/logo-band.png" alt="METALITYUNITEDロゴ" />
+                    </div>
+                  </div>
+                  <div class="band-logo-sp">
+                    <div class="member-illust">
+                      <img src="images/logo-band-sp.png" alt="METALITYUNITEDロゴ" />
+                    </div>
+                  </div>
+
+                </div><!-- 紹介部分 -->
+              </div>
+            </div><!-- 切り替え -->
+            <!-- 紹介部分 -->
+          </div>
+        </div><!-- Band -->
+
+        <!-- TOPに戻るアイコン -->
+        <a href="#top">
+          <div class="top-icon">
+            <i class="fa-solid fa-circle-chevron-up iconsize"></i>
+          </div>
+        </a>
+
+      </div><!-- コンテンツここまで -->
+    </div><!--火の粉の背景画像ここまで -->
+
+    {% include footer.html %}
+  </div><!-- 黒背景ここまで -->
+
+  <!-- splide-->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    new Splide('.splide').mount();
+  </script>
+
+  <!-- スクロールと内容切り替えを共存させたい クリックされたリンクに対応するラジオボタンがチェックされるようにする-->
+  <script>
+    function scrollToBandClass(menuId) {
+      document.getElementById(menuId).checked = true; // 対応するラジオボタンをチェックする
+      const targetElement = document.getElementById("bandclass");
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  </script>
+  <!-- ハンバーガーメニューのスクロールと閉じる動作を一緒にやりたい クリックされたリンクに対応するラジオボタンがチェックされるようにする-->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var links = document.querySelectorAll('.sp-nav-list a');
+
+      links.forEach(function (link) {
+        link.addEventListener('click', function () {
+          var hamburgerCheckbox = document.getElementById('hamburger');
+          if (hamburgerCheckbox.checked) {
+            hamburgerCheckbox.checked = false;
+          }
         });
-    </script>
-    {% include firebase_analytics.html %}
+      });
+    });
+  </script>
+  {% include firebase_analytics.html %}
 </body>
 
 </html>
