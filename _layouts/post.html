@@ -37,10 +37,11 @@
     <div class="music">
       <div class="container">
         <div class="music-introduction">
-          <!-- imageあれば -->
+          {% if page.image %}
           <div class="music-illustration">
-            <img src="/images/work/BLACKWINGS.webp" />
+            <img src="{{ page.image }}" />
           </div>
+          {% endif %}
           <div class="music-title-blackwing">{{ page.title }}</div>
         </div>
       </div>
