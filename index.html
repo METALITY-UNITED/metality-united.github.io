@@ -73,13 +73,9 @@
             <div class="news" id="news">
                 <h2>News</h2>
                 <section>
-                    <h3>M3-2024秋に申し込みました！</h3>
-                    <p>2024年10月27日（日）2024年10月27日(日) 10:30～15:30 [予定]</p>
-                    <p><b>リアルイベントスペース： 【シ-11a】</b></p>
-                    <p>503 bad gatewayと合同スペースです。</p>
-                    <a href="https://www.m3net.jp/" target="_blank">
-                        <img src="images/m3banner.webp" alt="M3バナー">
-                    </a>
+                    {% for post in site.posts limit:3 %}
+                    <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} {{ post.title }}</a>
+                    {% endfor %}
                 </section>
             </div>
 
