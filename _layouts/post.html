@@ -22,6 +22,7 @@
   <script src="https://kit.fontawesome.com/d925e0b3e6.js" crossorigin="anonymous"></script>
   <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/post.css">
   <link rel="icon" href="/icon/favicon.ico">
   <link rel="icon" sizes="192x192" href="/icon/android-chrome-192x192.png">
 </head>
@@ -47,9 +48,9 @@
       </div>
     </div>
 
-    <div class="container">
+    <article class="container">
       {{ content }}
-    </div>
+    </article>
 
     <div class="under-background">
       <!-- TOPに戻るアイコン -->
@@ -62,10 +63,10 @@
     </div><!-- 火の粉背景 -->
 
     <!-- フッター -->
-    <div class="footer">
+    <footer class="footer">
       <i class="fa-regular fa-copyright"></i>
       METALITYUNITED 2024
-    </div>
+    </footer>
 
   </div><!-- 背景ここまで -->
   {% include firebase_analytics.html %}
