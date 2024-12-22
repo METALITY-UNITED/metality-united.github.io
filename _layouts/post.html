@@ -2,65 +2,72 @@
 <html lang="ja" prefix="og:http://ogp.me/ns#">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>METALITY UNITED</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#000">
-    <meta name="description" content="シンフォニックメロディックパワーメタルバンド METALITY UNITED のWebサイト">
-    <meta property="og:title" content="METALITY UNITED" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://metality.band/" />
-    <meta property="og:image" content="https://metality.band/images/logo-band-ogp.png" />
-    <meta property="og:description" content="シンフォニックメロディックパワーメタルバンド METALITY UNITED のWebサイト" />
-    <meta property="og:site_name" content="METALITY UNITED" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#000">
+  <meta name="description" content="{{ page.description }}">
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://metality.band{{ page.url }}" />
+  <meta property="og:image" content="https://metality.band/images/logo-band-ogp.png" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:site_name" content="METALITY UNITED" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@metality_united" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@metality_united" />
 
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com/d925e0b3e6.js" crossorigin="anonymous"></script>
-    <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="icon/favicon.ico">
-    <link rel="icon" sizes="192x192" href="icon/android-chrome-192x192.png">
+  <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
+  <script src="https://kit.fontawesome.com/d925e0b3e6.js" crossorigin="anonymous"></script>
+  <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/icon/favicon.ico">
+  <link rel="icon" sizes="192x192" href="/icon/android-chrome-192x192.png">
 </head>
 
 <body>
-    <!-- 背景 -->
-    <div class="background">
-        <!--コンテンツ-->
-        <div class="container">
-            {% include header.html %}
-            {{ content }}
-        </div><!--背景画像の為に一旦コンテナーを解除 -->
+  <!-- 背景 -->
+  <div class="background">
+    <div class="container">
+      {% include header.html %}
+    </div>
 
-        <!-- フッター -->
-        <div class="footer">
-            <i class="fa-regular fa-copyright"></i>
-            METALITYUNITED 2024
+    <!-- ビジュアル・タイトル-->
+    <div class="music">
+      <div class="container">
+        <div class="music-introduction">
+          <!-- imageあれば -->
+          <div class="music-illustration">
+            <img src="/images/work/BLACKWINGS.webp" />
+          </div>
+          <div class="music-title-blackwing">{{ page.title }}</div>
         </div>
-    </div><!-- 黒背景ここまで -->
+      </div>
+    </div>
 
-    <!-- ハンバーガーメニューのスクロールと閉じる動作を一緒にやりたい クリックされたリンクに対応するラジオボタンがチェックされるようにする-->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var links = document.querySelectorAll('.sp-nav-list a');
+    <div class="container">
+      {{ content }}
+    </div>
 
-            links.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    var hamburgerCheckbox = document.getElementById('hamburger');
-                    if (hamburgerCheckbox.checked) {
-                        hamburgerCheckbox.checked = false;
-                    }
-                });
-            });
-        });
-    </script>
-    {% include firebase_analytics.html %}
+    <div class="under-background">
+      <!-- TOPに戻るアイコン -->
+      <a href="#top">
+        <div class="top-icon">
+          <i class="fa-solid fa-circle-chevron-up iconsize"></i>
+        </div>
+      </a>
+
+    </div><!-- 火の粉背景 -->
+
+    <!-- フッター -->
+    <div class="footer">
+      <i class="fa-regular fa-copyright"></i>
+      METALITYUNITED 2024
+    </div>
+
+  </div><!-- 背景ここまで -->
+  {% include firebase_analytics.html %}
 </body>
 
 </html>
