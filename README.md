@@ -47,6 +47,6 @@ We welcome contributions to the project! To contribute, follow these steps:
 
 Please adhere to the [Code of Conduct](CODE_OF_CONDUCT.md) when contributing to this project.
 
-### License
+### Design Credit
 
-This project is licensed under the [MIT License](LICENSE).
+かけだしちゃん
