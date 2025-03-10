@@ -73,9 +73,13 @@
       <div class="news" id="news">
         <h2>News</h2>
         <section>
-          {% for post in site.posts limit:3 %}
-          <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} {{ post.title }}</a>
-          {% endfor %}
+          <ul>
+            {% for post in site.posts limit:3 %}
+            <li>
+              <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} {{ post.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
         </section>
       </div>
 
