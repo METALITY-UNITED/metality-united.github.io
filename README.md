@@ -49,4 +49,4 @@ Please adhere to the [Code of Conduct](CODE_OF_CONDUCT.md) when contributing to 
 
 ### Design Credit
 
-かけだしちゃん
+originally designed by かけだしちゃん
