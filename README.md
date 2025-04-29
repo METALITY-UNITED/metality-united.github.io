@@ -24,7 +24,7 @@ To set up the project locally, follow these steps:
 3. Navigate to the root directory of your Jekyll project.
 4. Run the command `bundle install` to install the necessary dependencies specified in the `Gemfile`.
 5. Ensure you have the necessary plugins specified in `_config.yml` installed.
-6. Start the Jekyll server by running `jekyll serve`.
+6. Start the Jekyll server by running `jekyll serve --livereload`.
 7. Open `http://localhost:4000` in a browser to view the site.
 
 ## Usage and Contribution Guidelines
