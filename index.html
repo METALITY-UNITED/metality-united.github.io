@@ -48,21 +48,13 @@
         <section class="splide" aria-label="carousel" data-splide='{"type":"loop","perPage":1,"autoplay":true}'>
           <div class="splide__track">
             <ul class="splide__list">
+              {% for keyvisual in site.data.keyvisuals %}
               <li class="splide__slide">
-                <a href="https://www.youtube.com/watch?v=QLmD760H7RQ" target="_blank">
-                  <img src="images/top/BLACKWINGS.webp" alt="キービジュアル BLACK WING" />
+                <a href="{{keyvisual.link}}" target="_blank">
+                  <img src="{{keyvisual.image}}" />
                 </a>
               </li>
-              <li class="splide__slide">
-                <a href="https://www.youtube.com/watch?v=mKag9cJbWIo" target="_blank">
-                  <img src="images/top/NIGHTOFDEATH.webp" alt="キービジュアル NIGHT OF DEATH" />
-                </a>
-              </li>
-              <li class="splide__slide">
-                <a href="https://www.youtube.com/watch?v=EeEPwV6ucog" target="_blank">
-                  <img src="images/top/LOSTBLESSING.webp" alt="キービジュアル LOST BLESSING" />
-                </a>
-              </li>
+              {% endfor %}
             </ul>
           </div>
         </section>
