@@ -86,34 +86,18 @@
 
       <!-- Release -->
       <div class="release" id="release">
-        <!-- Release見出し -->
         <h2>Release</h2>
-        <!-- Release紹介 -->
         <div class="release-contents">
+          {% for work in site.data.works %}
           <div class="release-contents-item">
-            <a href="blackwings.html">
+            <a href="{{work.link}}">
               <div class="release-contents-item-img-field">
-                <img src="images/work/BLACKWINGS.webp" alt="BLACK WINGS情報ページへのリンク" />
+                <img src="{{work.image}}"/>
               </div>
-              <p>BLACK WINGS</p>
+              <p>{{work.title}}</p>
             </a>
           </div>
-          <div class="release-contents-item">
-            <a href="lostblessing.html">
-              <div class="release-contents-item-img-field">
-                <img src="images/work/LOSTBLESSING.webp" alt="LOST BLESSING情報ページへのリンク" />
-              </div>
-              <p>LOST BLESSING</p>
-            </a>
-          </div>
-          <div class="release-contents-item">
-            <a href="nightofdeath.html">
-              <div class="release-contents-item-img-field">
-                <img src="images/work/NIGHTOFDEATH.webp" alt="NIGHT OF DEATH情報ページへのリンク" />
-              </div>
-              <p>NIGHT OF DEATH</p>
-            </a>
-          </div>
+          {% endfor %}
         </div>
       </div>
 
