@@ -1,0 +1,337 @@
+@charset "UTF-8";
+/* =========================================================
+   METALITY UNITED — World / Lore page
+   Design tokens match css/style.css (Noto Sans JP, 1.6rem base,
+   black bg / white text, h2 5rem/3rem). Accent colors are the
+   per-album brand colors from style.css, tuned with a soft glow
+   for legibility on black.
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- hero ---------- */
+.lore-hero {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .92)),
+    url("../images/background/AdobeStock_680351496.webp");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 9rem 20px 7rem;
+  overflow: hidden;
+}
+
+.lore-hero-eyebrow {
+  font-family: 'JOST', 'Noto Sans JP', sans-serif;
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  opacity: .7;
+  margin-bottom: 1.5rem;
+}
+
+.lore-hero h1 {
+  font-family: 'JOST', 'Noto Sans JP', sans-serif;
+  font-weight: 800;
+  font-size: 5.5rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+  letter-spacing: .02em;
+}
+
+.lore-hero-tag {
+  max-width: 62rem;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2;
+  opacity: .92;
+}
+
+.lore-hero-tag em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+@media (max-width: 769px) {
+  .lore-hero { padding: 6rem 18px 4.5rem; }
+  .lore-hero h1 { font-size: 3.4rem; }
+  .lore-hero-tag { font-size: 1.5rem; }
+}
+
+/* ---------- section shell ---------- */
+.lore-section {
+  padding: 6rem 20px;
+}
+
+.lore-section-narrow {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.lore-lead {
+  max-width: 62rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 2.1;
+  font-weight: 300;
+  opacity: .9;
+}
+
+.lore-lead + .lore-lead { margin-top: 2rem; }
+
+/* h2 is styled globally; keep a small English kicker under it */
+.lore-kicker {
+  font-family: 'JOST', 'Noto Sans JP', sans-serif;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: .55;
+  font-size: 1.3rem;
+  margin: -2rem 0 3.5rem;
+}
+
+/* ---------- chronicle timeline ---------- */
+.lore-timeline {
+  position: relative;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-left: 3.2rem;
+}
+
+/* the spine */
+.lore-timeline::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: .6rem;
+  bottom: .6rem;
+  width: 2px;
+  background: linear-gradient(#3a3a3a, #141414);
+}
+
+.lore-chapter {
+  position: relative;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: 22rem 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* node dot on the spine */
+.lore-chapter::before {
+  content: "";
+  position: absolute;
+  left: -2.7rem;
+  top: 1.1rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid var(--accent, #fff);
+  box-shadow: 0 0 14px 1px color-mix(in srgb, var(--accent, #fff) 65%, transparent);
+}
+
+.lore-chapter:last-child { margin-bottom: 0; }
+
+.lore-chapter-media {
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, .18);
+  overflow: hidden;
+}
+
+.lore-chapter-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .35s ease;
+}
+
+.lore-chapter:hover .lore-chapter-media img { transform: scale(1.05); }
+
+.lore-chapter-body {
+  padding-top: .4rem;
+}
+
+.lore-chapter-no {
+  font-family: 'JOST', 'Noto Sans JP', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  opacity: .5;
+  margin-bottom: .8rem;
+}
+
+.lore-chapter-title {
+  font-family: 'JOST', 'Noto Sans JP', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--accent, #fff);
+  text-shadow: 0 0 22px color-mix(in srgb, var(--accent, #fff) 45%, transparent);
+  margin-bottom: 1rem;
+}
+
+.lore-chapter-tag {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  opacity: .85;
+  margin-bottom: 1.4rem;
+}
+
+.lore-chapter-text {
+  font-size: 1.6rem;
+  line-height: 2;
+  font-weight: 300;
+  opacity: .92;
+  margin-bottom: 1.6rem;
+}
+
+.lore-chapter-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .8rem 1.6rem;
+  border: .5px solid rgba(255, 255, 255, .8);
+  background: #000;
+  font-size: 1.4rem;
+  transition: opacity .2s ease, background .2s ease;
+}
+
+.lore-chapter-cta:hover {
+  opacity: .75;
+  background: #0d0d0d;
+}
+
+.lore-chapter-cta i { font-size: 1.2rem; }
+
+@media (max-width: 769px) {
+  .lore-chapter {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .lore-chapter-title { font-size: 2.4rem; }
+  .lore-timeline { padding-left: 2.6rem; }
+  .lore-chapter::before { left: -2.1rem; }
+}
+
+/* album accent colors (brand colors from style.css, glow-tuned for black) */
+.lore-chapter--lostblessing    { --accent: #8f7fb8; }
+.lore-chapter--nightofdeath    { --accent: #d13a3a; }
+.lore-chapter--blackwings      { --accent: #ffffff; }
+.lore-chapter--divinepunishment{ --accent: #d4ad52; }
+
+/* ---------- glossary ---------- */
+.lore-glossary {
+  max-width: 82rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.lore-term {
+  padding: 1.8rem;
+  background: rgba(23, 23, 23, .7);
+  border: .5px solid rgba(255, 255, 255, .2);
+  border-top: 2px solid var(--accent, #fff);
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.lore-term:hover { transform: translateY(-4px); }
+
+.lore-term dt {
+  font-family: 'JOST', 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--accent, #fff);
+  margin-bottom: .6rem;
+}
+
+.lore-term dd {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  font-weight: 300;
+  opacity: .9;
+  margin: 0;
+}
+
+.lore-term-source {
+  display: block;
+  margin-top: .9rem;
+  font-size: 1.1rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  opacity: .45;
+}
+
+@media (max-width: 769px) {
+  .lore-glossary { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* ---------- sealed page (easter egg) ---------- */
+.lore-sealed {
+  position: relative;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  border: 1px dashed rgba(212, 173, 82, .5);
+  background: radial-gradient(circle at 50% 40%, rgba(212, 173, 82, .12), rgba(0, 0, 0, 0) 70%);
+}
+
+.lore-sealed-seal {
+  font-family: 'JOST', 'Noto Sans JP', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  color: #d4ad52;
+  margin-bottom: 1.5rem;
+}
+
+.lore-sealed p {
+  font-size: 1.7rem;
+  line-height: 2;
+  font-weight: 300;
+  font-style: italic;
+  opacity: .9;
+}
+
+.lore-sealed-hint {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  letter-spacing: .2em;
+  opacity: .35;
+  text-transform: uppercase;
+}
+
+/* unsealed state */
+body.lore-unsealed .lore-sealed {
+  border-style: solid;
+  border-color: rgba(212, 173, 82, .9);
+  box-shadow: 0 0 40px rgba(212, 173, 82, .25);
+}
+
+body.lore-unsealed .lore-sealed-reveal { display: block; }
+
+.lore-sealed-reveal { display: none; }
+
+.lore-sealed-title {
+  font-family: 'JOST', 'Noto Sans JP', sans-serif;
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: #d4ad52;
+  text-shadow: 0 0 24px rgba(212, 173, 82, .5);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 769px) {
+  .lore-sealed-title { font-size: 2rem; }
+  .lore-sealed p { font-size: 1.5rem; }
+}
