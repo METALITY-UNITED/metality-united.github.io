@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og:http://ogp.me/ns#">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>METALITY UNITED - World / {{ page.title }}</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#000">
+  <meta name="description" content="{{ page.description }}">
+  <meta property="og:title" content="METALITY UNITED - World / {{ page.title }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://metality.band/lore.html" />
+  <meta property="og:image" content="https://metality.band/images/logo-band-ogp.png" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:site_name" content="METALITY UNITED" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@metality_united" />
+
+  <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
+  <script src="https://kit.fontawesome.com/d925e0b3e6.js" crossorigin="anonymous"></script>
+  <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/lore.css">
+  <link rel="icon" href="/icon/favicon.ico">
+  <link rel="icon" sizes="192x192" href="/icon/android-chrome-192x192.png">
+</head>
+
+<body>
+  <div class="background">
+    <!-- ヘッダー -->
+    <div class="container">
+      {% include header.html %}
+    </div>
+
+    <!-- ヒーロー -->
+    <div class="lore-hero">
+      <div class="lore-hero-eyebrow">{{ page.eyebrow }}</div>
+      <h1>WORLD</h1>
+      <p class="lore-hero-tag">{{ page.tag }}</p>
+    </div>
+
+    <!-- コンテンツ -->
+    <div class="container">
+      {{ content }}
+    </div>
+
+    <!-- 封印された頁（隠しコンテンツ） -->
+    <div class="lore-section" id="sealed">
+      <h2>封印された頁</h2>
+      <div class="lore-sealed">
+        <div class="lore-sealed-seal">Sealed</div>
+        <p>
+          まだ名を持たぬ、第五の章。<br>
+          名を持たぬ頁は、名を持たぬまま眠っている。
+        </p>
+        <div class="lore-sealed-hint">a code waits in the dark</div>
+
+        <div class="lore-sealed-reveal">
+          <div class="lore-sealed-title" style="margin-top:2.5rem;">第五章 ― 名はまだ無い</div>
+          <p>
+            汝が此処まで辿り着いた。<br>
+            眠っていた頁が、微かに息を吐いた。<br>
+            ――その名は、次の音に刻まれる。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPに戻るアイコン -->
+    <a href="#top">
+      <div class="top-icon">
+        <i class="fa-solid fa-circle-chevron-up iconsize"></i>
+      </div>
+    </a>
+
+    {% include footer.html %}
+  </div>
+
+  <!-- 隠し頁の解錠（Konamiコマンド） -->
+  <script>
+    (function () {
+      var code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
+        "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+      var i = 0;
+      document.addEventListener("keydown", function (e) {
+        var k = (e.key || "").toLowerCase();
+        if (k === code[i]) {
+          i++;
+          if (i === code.length) {
+            document.body.classList.add("lore-unsealed");
+            i = 0;
+            var el = document.getElementById("sealed");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        } else {
+          i = (k === code[0]) ? 1 : 0;
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>
