@@ -1,15 +1,23 @@
 - title: DIVINE PUNISHMENT
   image: images/work/DIVINEPUNISHMENT.webp
   link: divinepunishment.html
+  width: 1000
+  height: 985
 
 - title: BLACK WINGS
   image: images/work/BLACKWINGS.webp
   link: blackwings.html
+  width: 2853
+  height: 2832
 
 - title: NIGHT OF DEATH
   image: images/work/NIGHTOFDEATH.webp
   link: nightofdeath.html
+  width: 1428
+  height: 1411
 
 - title: LOST BLESSING
   image: images/work/LOSTBLESSING.webp
   link: lostblessing.html
+  width: 2500
+  height: 2500

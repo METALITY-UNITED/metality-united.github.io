@@ -19,8 +19,12 @@
   <meta name="twitter:site" content="@metality_united" />
 
   <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
-  <script src="https://kit.fontawesome.com/d925e0b3e6.js" crossorigin="anonymous"></script>
   <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/icon/favicon.ico">
   <link rel="icon" sizes="192x192" href="/icon/android-chrome-192x192.png">
@@ -40,7 +44,7 @@
         <div class="music-introduction">
           <div class="music-copy">{{ page.copy }}</div>
           <div class="music-illustration">
-            <img src="{{ page.imageUrl }}" alt="{{ page.title }}メインビジュアル" />
+            <img src="{{ page.imageUrl }}" {% if page.imageWidth %}width="{{ page.imageWidth }}" height="{{ page.imageHeight }}"{% endif %} alt="{{ page.title }}メインビジュアル" />
           </div>
           <div class="{{ page.titleClass }}">{{ page.title }}</div>
         </div>
@@ -56,10 +60,13 @@
       <!--コンテンツ-->
       <div class="container">
         <div class="youtube" id="youtube">
-          <iframe width="100%" height="100%" src="{{ page.youtube }}"
-            title="{{ page.title }} - METALITY UNITED" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          {% assign videoId = page.youtube | split: '?' | first | split: '/' | last %}
+          <div class="youtube-player" data-video-id="{{ videoId }}" role="button" tabindex="0"
+            aria-label="{{ page.title }} - METALITY UNITED の動画再生">
+            <img src="https://img.youtube.com/vi/{{ videoId }}/hqdefault.jpg" width="480" height="360"
+              alt="{{ page.title }} サムネイル" />
+            <span class="youtube-player-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+          </div>
         </div>
       </div>
 
@@ -74,6 +81,29 @@
 
     {% include footer.html %}
   </div><!-- 背景ここまで -->
+
+  <script>
+    document.querySelectorAll('.youtube-player').forEach(function (player) {
+      function play() {
+        var id = player.getAttribute('data-video-id');
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+        iframe.title = player.getAttribute('aria-label');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.setAttribute('allowfullscreen', '');
+        player.parentNode.replaceChild(iframe, player);
+      }
+      player.addEventListener('click', play);
+      player.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          play();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
