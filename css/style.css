@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* 文字コードの指定 */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
 
 html {
   font-size: 62.5%;
@@ -216,6 +215,8 @@ img {
 .splide__slide img {
   height: auto;
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 
@@ -694,6 +695,41 @@ input[name="tab-member"] {
 .youtube iframe {
   width: 100%;
   height: 100%;
+}
+
+/* 動画再生ボタン（クリックでiframe読み込み） */
+.youtube-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  background-color: #000;
+}
+
+.youtube-player img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.youtube-player-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+}
+
+.youtube-player:hover .youtube-player-btn,
+.youtube-player:focus .youtube-player-btn {
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 /* TOPに戻るアイコン */

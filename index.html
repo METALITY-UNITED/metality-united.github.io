@@ -23,8 +23,11 @@
   <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
   <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 
-  <script src="https://kit.fontawesome.com/d925e0b3e6.js" crossorigin="anonymous"></script>
   <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" href="icon/favicon.ico">
@@ -60,7 +63,7 @@
               {% for keyvisual in site.data.keyvisuals %}
               <li class="splide__slide">
                 <a href="{{keyvisual.link}}" target="_blank">
-                  <img src="{{keyvisual.image}}" />
+                  <img src="{{keyvisual.image}}" {% unless forloop.first %}loading="lazy"{% endunless %} alt="キービジュアル" />
                 </a>
               </li>
               {% endfor %}
@@ -93,7 +96,7 @@
           <div class="release-contents-item">
             <a href="{{work.link}}">
               <div class="release-contents-item-img-field">
-                <img src="{{work.image}}" />
+                <img src="{{work.image}}" width="{{work.width}}" height="{{work.height}}" loading="lazy" alt="{{work.title}}" />
               </div>
               <p>{{work.title}}</p>
             </a>
@@ -128,14 +131,14 @@
 
               <label class="tab-member" for="tab-metalityunited">
                 <a href="#bandclass" onclick="scrollToBandClass('tab-metalityunited')">
-                  <div><img src="images/logo-samune.png" id="samune-logo" alt="ロゴサムネ" /></div>
+                  <div><img src="images/logo-samune.png" id="samune-logo" width="300" height="400" alt="ロゴサムネ" /></div>
                 </a>
               </label>
 
               <label class="tab-member" for="tab-senri">
                 <a href="#bandclass" onclick="scrollToBandClass('tab-senri')">
                   <div>
-                    <img src="images/member/member-small-senri.webp" id="samune-senri" alt="成瀬センリサムネイラスト" />
+                    <img src="images/member/member-small-senri.webp" id="samune-senri" width="300" height="400" alt="成瀬センリサムネイラスト" />
                   </div>
                 </a>
               </label>
@@ -143,7 +146,7 @@
               <label class="tab-member" for="tab-sintone">
                 <a href="#bandclass" onclick="scrollToBandClass('tab-sintone')">
                   <div>
-                    <img src="images/member/member-small-sintone.webp" id="samune-sintone" alt="しんとーんサムネイラスト" />
+                    <img src="images/member/member-small-sintone.webp" id="samune-sintone" width="300" height="400" alt="しんとーんサムネイラスト" />
                   </div>
                 </a>
               </label>
@@ -151,7 +154,7 @@
               <label class="tab-member" for="tab-alse">
                 <a href="#bandclass" onclick="scrollToBandClass('tab-alse')">
                   <div>
-                    <img src="images/member/member-small-aruse.webp" id="samune-alse" alt="あるせサムネイラスト" />
+                    <img src="images/member/member-small-aruse.webp" id="samune-alse" width="300" height="400" alt="あるせサムネイラスト" />
                   </div>
                 </a>
               </label>
@@ -160,7 +163,7 @@
               <label class="tab-member" for="tab-ginko">
                 <a href="#bandclass" onclick="scrollToBandClass('tab-ginko')">
                   <div>
-                    <img src="images/member/member-small-ginko.webp" id="samune-ginko" alt="頬白ギンコサムネイラスト" />
+                    <img src="images/member/member-small-ginko.webp" id="samune-ginko" width="300" height="400" alt="頬白ギンコサムネイラスト" />
                   </div>
                 </a>
               </label>
@@ -168,7 +171,7 @@
               <label class="tab-member" for="tab-niu">
                 <a href="#bandclass" onclick="scrollToBandClass('tab-niu')">
                   <div>
-                    <img src="images/member/member-small-niu.webp" id="samune-niu" alt="niuサムネイラスト" />
+                    <img src="images/member/member-small-niu.webp" id="samune-niu" width="300" height="400" alt="niuサムネイラスト" />
                   </div>
                 </a>
               </label>
@@ -225,7 +228,7 @@
 
                   <!-- メンバーイラスト -->
                   <div class="member-illust">
-                    <img src="images/member/member-large-senri.webp" alt="成瀬センリ" />
+                    <img src="images/member/member-large-senri.webp" width="1129" height="1315" loading="lazy" alt="成瀬センリ" />
                   </div>
 
                 </div><!-- 紹介部分 -->
@@ -270,7 +273,7 @@
 
                   <!-- メンバーイラスト -->
                   <div class="member-illust">
-                    <img src="images/member/member-large-sintone.webp" alt="しんとーん" />
+                    <img src="images/member/member-large-sintone.webp" width="1129" height="1315" loading="lazy" alt="しんとーん" />
                   </div>
 
                 </div><!-- 紹介部分 -->
@@ -329,7 +332,7 @@
 
                   <!-- メンバーイラスト -->
                   <div class="member-illust">
-                    <img src="images/member/member-large-aruse.webp" alt="あるせ" />
+                    <img src="images/member/member-large-aruse.webp" width="1129" height="1315" loading="lazy" alt="あるせ" />
                   </div>
                 </div><!-- 紹介部分 -->
               </div>
@@ -376,7 +379,7 @@
 
                   <!-- メンバーイラスト -->
                   <div class="member-illust">
-                    <img src="images/member/member-large-ginko.webp" alt="頬白ギンコ" />
+                    <img src="images/member/member-large-ginko.webp" width="1129" height="1315" loading="lazy" alt="頬白ギンコ" />
                   </div>
                 </div><!-- 紹介部分 -->
               </div>
@@ -423,7 +426,7 @@
 
                   <!-- メンバーイラスト -->
                   <div class="member-illust">
-                    <img src="images/member/member-large-niu.webp" alt="niu" />
+                    <img src="images/member/member-large-niu.webp" width="1129" height="1315" loading="lazy" alt="niu" />
                   </div>
                 </div><!-- 紹介部分 -->
               </div>
@@ -470,12 +473,12 @@
                   <!-- メンバーイラスト -->
                   <div class="band-logo-pc">
                     <div class="member-illust">
-                      <img src="images/logo-band.png" alt="METALITYUNITEDロゴ" />
+                      <img src="images/logo-band.png" width="1129" height="765" loading="lazy" alt="METALITYUNITEDロゴ" />
                     </div>
                   </div>
                   <div class="band-logo-sp">
                     <div class="member-illust">
-                      <img src="images/logo-band-sp.png" alt="METALITYUNITEDロゴ" />
+                      <img src="images/logo-band-sp.png" width="1129" height="765" loading="lazy" alt="METALITYUNITEDロゴ" />
                     </div>
                   </div>
 
