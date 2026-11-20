@@ -257,6 +257,55 @@ img {
   margin-top: 1rem;
 }
 
+.demo-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem 0 80px;
+  padding: 2.4rem 3rem;
+  border: 1px solid #b72222;
+  background: linear-gradient(110deg, rgba(183, 34, 34, 0.24), rgba(23, 23, 23, 0.9));
+  text-align: center;
+}
+
+.demo-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 4rem;
+  color: #fff;
+  background-color: #b72222;
+  box-shadow: 0 0 18px rgba(183, 34, 34, 0.45);
+  font-size: 2.2rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.demo-cta a:hover {
+  background-color: #8f1919;
+}
+
+.demo-cta a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 769px) {
+  .demo-cta {
+    margin: 3rem 0 40px;
+    padding: 2rem;
+  }
+
+  .demo-cta a {
+    width: 100%;
+    padding: 1.8rem 1rem;
+    font-size: 1.8rem;
+  }
+}
+
 /* ジャケットにカーソルを当てると縮む */
 
 .release-contents-item-img-field {
