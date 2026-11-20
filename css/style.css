@@ -942,6 +942,22 @@ input[name="tab-member"] {
   display: none;
 }
 
+@keyframes band-panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab01 > .tab_contents {
+  animation: band-panel-enter 420ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
 /*選択されているタブを表示*/
 #tab-senri:checked~.tab01 #tab-senri,
 #tab-sintone:checked~.tab01 #tab-sintone,
@@ -1139,7 +1155,8 @@ input[name="tab-member"] {
   .ember,
   .ember::before,
   .keyvisual,
-  .keyvisual::after {
+  .keyvisual::after,
+  .tab01 > .tab_contents {
     animation: none;
   }
 }
