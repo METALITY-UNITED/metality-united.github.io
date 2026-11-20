@@ -34,26 +34,42 @@
       {% include header.html %}
     </div>
 
-    <!-- ビジュアル・タイトル-->
-    <div class="music">
-      <div class="container">
-        <div class="music-introduction">
-          {% if page.image %}
-          <div class="music-illustration">
-            <img src="{{ page.image }}" />
-          </div>
-          {% endif %}
-          <div class="music-title-blackwing">{{ page.title }}</div>
+    <header class="post-hero">
+      <div class="container post-hero-content{% if page.image %} has-image{% endif %}">
+        <div class="post-heading">
+          <nav class="post-breadcrumb" aria-label="パンくずリスト">
+            <a href="/#news">News</a>
+            <span aria-hidden="true">/</span>
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+          </nav>
+          <p class="post-eyebrow">NEWS UPDATE</p>
+          <h1 class="post-title">{{ page.title }}</h1>
         </div>
+        {% if page.image %}
+        <div class="post-image">
+          <img src="{{ page.image }}" alt="{{ page.title | escape }}の関連ビジュアル" />
+        </div>
+        {% endif %}
       </div>
-    </div>
+    </header>
 
-    <article class="container">
-      {{ content }}
-    </article>
+    <main class="container post-main">
+      <article class="post-article">
+        <div class="post-content">
+          {{ content }}
+        </div>
+        <nav class="post-navigation" aria-label="記事ナビゲーション">
+          <a class="post-back-link" href="/#news">
+            <span aria-hidden="true">←</span>
+            News一覧へ戻る
+          </a>
+        </nav>
+      </article>
+    </main>
 
     <!-- 投稿末尾のSNSリンク -->
-    <div class="post-social">
+    <section class="post-social container" aria-label="METALITY UNITEDのSNS">
+      <p class="post-social-heading">FOLLOW METALITY UNITED</p>
       <ul class="social-links">
         <li>
           <a class="social-btn social-btn-x" href="https://twitter.com/metality_united" target="_blank" rel="noopener noreferrer" aria-label="METALITY UNITED の X (Twitter)">
@@ -68,7 +84,7 @@
           </a>
         </li>
       </ul>
-    </div>
+    </section>
 
     {% include footer.html %}
 
