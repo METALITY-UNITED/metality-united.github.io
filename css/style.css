@@ -385,10 +385,6 @@ img {
 
 
 /* キービジュアル */
-.kv {
-  margin-bottom: 80px;
-}
-
 /* カルーセル */
 .splide__slide img {
   height: auto;
@@ -1103,18 +1099,8 @@ img {
   border: 0.5px solid #960000;
 }
 
-.member-contents-youtube :hover {
+.member-contents-youtube:hover {
   opacity: 0.75;
-}
-
-.member-contents-youtube a :hover {
-  opacity: 1;
-}
-
-.member-contents-website {
-  padding: 1rem;
-  background-color: black;
-  border: 0.5px solid white;
 }
 
 /* 紹介文 */
@@ -1127,16 +1113,6 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.09);
   overflow: auto;
 }
-
-@media (max-width: 769px) {
-  .member-contents-Introduction-field {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-  }
-}
-
-
 
 /* メンバーイラスト */
 .member-illust {
@@ -1289,60 +1265,6 @@ input[name="tab-member"] {
 
 
 /* CD紹介ページ */
-
-
-
-.music {
-  /* width: 100vw;
-  margin: 0 calc(50% - 50vw); */
-  background-image: url("../images/background/musichaikei.webp");
-  background-size: cover;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 769px) {
-  .music {
-    background-image: url("../images/background/musichaikei.webp");
-    background-size: contain;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
-}
-
-
-.music-introduction {
-  text-align: center;
-}
-
-.music-introduction img {
-  margin-bottom: 20px;
-}
-
-@media (max-width: 769px) {
-  .music-introduction img {
-    margin-bottom: 20px;
-  }
-}
-
-
-.music-copy {
-  margin-bottom: 20px;
-}
-
-.music img {
-  width: 50%;
-}
-
-@media (max-width: 769px) {
-  .music img {
-    width: 100%;
-    padding: 10px;
-  }
-}
-
 .music-title-nightofdeath {
   font-size: 3rem;
   font-weight: 800;
@@ -1359,81 +1281,6 @@ input[name="tab-member"] {
   font-size: 3rem;
   font-weight: 800;
   color: #fff;
-}
-
-.booth {
-  margin-bottom: 80px;
-}
-
-.booth a {
-  text-decoration: underline;
-}
-
-@media (max-width: 769px) {
-  .booth {
-    margin-bottom: 80px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (max-width: 769px) {
-  .booth a {
-    text-decoration: underline;
-  }
-}
-
-.track-flex {
-  display: flex;
-}
-
-@media (max-width: 769px) {
-  .track-flex {
-    display: block;
-  }
-}
-
-
-
-.track {
-  margin-bottom: 40px;
-}
-
-@media (max-width: 769px) {
-  .track {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-.track-list {
-  margin-bottom: 40px;
-}
-
-.position {
-  margin: 0 80px;
-}
-
-@media (max-width: 769px) {
-  .position {
-    margin: 0 auto;
-  }
-}
-
-
-/* 視聴動画 */
-.youtube {
-  text-align: center;
-  padding-top: 40px;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-
-  margin-bottom: 80px;
-}
-
-.youtube iframe {
-  width: 100%;
-  height: 100%;
 }
 
 /* TOPに戻るアイコン */
