@@ -94,6 +94,121 @@ h2::before {
     var(--color-bg);
 }
 
+.background.has-flame-backdrop {
+  position: relative;
+  isolation: isolate;
+}
+
+.background.has-flame-backdrop::before {
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 0;
+  height: clamp(32rem, 50vw, 72rem);
+  background-image:
+    linear-gradient(to bottom, var(--color-bg), rgba(8, 9, 12, 0)),
+    url("../images/background/AdobeStock_680351496.webp");
+  background-size: 100% 100%, cover;
+  background-repeat: no-repeat;
+  background-position: center, bottom center;
+  content: "";
+  pointer-events: none;
+}
+
+.background.work-page.has-flame-backdrop::before {
+  height: clamp(50rem, 70vw, 100rem);
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 9, 12, 0.94) 0%,
+      rgba(8, 9, 12, 0.62) 28%,
+      rgba(8, 9, 12, 0.18) 68%,
+      rgba(8, 9, 12, 0) 100%
+    ),
+    url("../images/background/AdobeStock_680351496.webp");
+}
+
+.embers {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.ember {
+  position: absolute;
+  bottom: -0.5rem;
+  left: var(--ember-x);
+  width: var(--ember-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: 0;
+  animation: ember-rise var(--ember-duration) var(--ember-easing) var(--ember-delay) infinite;
+  will-change: transform, opacity;
+}
+
+.ember::before {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--ember-color);
+  box-shadow: 0 0 0.7rem var(--ember-color);
+  content: "";
+  animation: ember-flicker var(--ember-flicker-duration) ease-in-out var(--ember-flicker-delay) infinite alternate;
+}
+
+@keyframes ember-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.45);
+  }
+
+  12% {
+    opacity: var(--ember-opacity);
+  }
+
+  36% {
+    transform: translate3d(var(--ember-sway), -29vh, 0) scale(1.1);
+  }
+
+  61% {
+    transform: translate3d(var(--ember-counter-sway), -61vh, 0) scale(0.7);
+  }
+
+  84% {
+    opacity: var(--ember-opacity);
+    transform: translate3d(var(--ember-drift), -91vh, 0) scale(0.48);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--ember-drift), -112vh, 0) scale(0.2);
+  }
+}
+
+@keyframes ember-flicker {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.7);
+  }
+
+  42% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  73% {
+    opacity: 0.6;
+    transform: scale(0.82);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
 .under-background {
   background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("../images/background/AdobeStock_680351496.webp");
   background-size: cover;
@@ -102,6 +217,14 @@ h2::before {
 }
 
 @media (max-width: 769px) {
+  .background.has-flame-backdrop::before {
+    background-size: 100% 100%, contain;
+  }
+
+  .background.work-page.has-flame-backdrop::before {
+    height: 50rem;
+  }
+
   .under-background {
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("../images/background/AdobeStock_680351496.webp");
     background-size: contain;
@@ -996,6 +1119,8 @@ input[name="tab-member"] {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ember,
+  .ember::before,
   .keyvisual,
   .keyvisual::after {
     animation: none;
