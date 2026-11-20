@@ -4,3 +4,6 @@
 # jekyll-minifier:
 #   uglifier_args:
 #     harmony: true
+url: "https://metality.band"
+plugins:
+  - jekyll-sitemap
