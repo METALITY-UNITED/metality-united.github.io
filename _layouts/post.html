@@ -39,7 +39,7 @@
       <div class="container post-hero-content{% if page.image %} has-image{% endif %}">
         <div class="post-heading">
           <nav class="post-breadcrumb" aria-label="パンくずリスト">
-            <a href="/#news">News</a>
+            <a href="/news/">News</a>
             <span aria-hidden="true">/</span>
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
           </nav>
@@ -60,7 +60,7 @@
           {{ content }}
         </div>
         <nav class="post-navigation" aria-label="記事ナビゲーション">
-          <a class="post-back-link" href="/#news">
+          <a class="post-back-link" href="/news/">
             <span aria-hidden="true">←</span>
             News一覧へ戻る
           </a>

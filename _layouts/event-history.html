@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og:http://ogp.me/ns#">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#000">
+  <meta name="description" content="{{ page.description }}">
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://metality.band{{ page.url }}" />
+  <meta property="og:image" content="https://metality.band/images/logo-band-ogp.png" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:site_name" content="METALITY UNITED" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@metality_united" />
+  <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
+  <script src="https://kit.fontawesome.com/d925e0b3e6.js" crossorigin="anonymous"></script>
+  <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/icon/favicon.ico">
+  <link rel="icon" sizes="192x192" href="/icon/android-chrome-192x192.png">
+</head>
+
+<body>
+  <div class="background has-flame-backdrop">
+    {% include embers.html %}
+    <div class="container">
+      {% include header.html %}
+    </div>
+
+    <main class="container event-history">
+      <header class="m3-history-header">
+        <p class="m3-history-eyebrow">EVENT PARTICIPATION HISTORY</p>
+        <h1 class="m3-history-title">イベント参加履歴</h1>
+        <p class="m3-history-description">2026年のライブ出演と、M3参加の記録をまとめています。</p>
+      </header>
+
+      <section aria-labelledby="live-history-title">
+        <h2 class="event-history-section-title" id="live-history-title">ライブ出演・参加記録</h2>
+        <ol class="m3-history-list">
+          {% for event in site.data.live_history %}
+          <li>
+            <article class="m3-history-item">
+              <header class="m3-history-item-header live-history-item-header">
+                <div>
+                  <p class="live-history-date">{{ event.date }}</p>
+                  <h3 class="m3-history-event">{{ event.event }}</h3>
+                </div>
+                <a class="live-history-link" href="{{ event.url }}" target="_blank" rel="noopener noreferrer">
+                  {{ event.link_label }} ↗
+                </a>
+              </header>
+              <h4 class="live-history-tracks-label">演奏曲</h4>
+              <ol class="live-history-tracks">
+                {% for track in event.tracks %}
+                <li>
+                  <span class="live-history-track-title">{{ track.title }}</span>
+                  <span class="live-history-track-artist">
+                    <span class="live-history-track-artist-label">ARTIST</span>
+                    {{ track.artist }}
+                  </span>
+                </li>
+                {% endfor %}
+              </ol>
+            </article>
+          </li>
+          {% endfor %}
+        </ol>
+      </section>
+
+      <section aria-labelledby="m3-history-title">
+        <h2 class="event-history-section-title" id="m3-history-title">M3参加履歴</h2>
+        <p class="m3-history-description">M3-2022秋からM3-2026春まで。頒布作品は各回の新作と、それ以前に発表した作品を累積して掲載しています。</p>
+        <ol class="m3-history-list">
+        {% for event in site.data.m3_history %}
+        <li>
+          <article class="m3-history-item">
+            <header class="m3-history-item-header">
+              <h3 class="m3-history-event">{{ event.event }}</h3>
+              <p class="m3-history-space">SPACE {{ event.space }}</p>
+            </header>
+            <h3 class="m3-history-works-label">頒布作品</h3>
+            <ul class="m3-history-works">
+              {% for work in event.works %}
+              <li>
+                <a class="m3-history-work" href="{{ work.url }}"{% if work.url contains "https://" %} target="_blank" rel="noopener noreferrer"{% endif %}>
+                  {{ work.title }}
+                  {% if work.new_release %}<span class="m3-history-work-new">NEW</span>{% endif %}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            <a class="m3-history-source" href="{{ event.source }}" target="_blank" rel="noopener noreferrer">M3公式サークル一覧 ↗</a>
+          </article>
+        </li>
+        {% endfor %}
+        </ol>
+      </section>
+
+      <p class="m3-history-sources">
+        作品情報：
+        <a href="https://demo.metality.band/" target="_blank" rel="noopener noreferrer">METALITY UNITED DEMO</a>
+        ／ イベント情報：
+        <a href="https://www.m3net.jp/event/" target="_blank" rel="noopener noreferrer">M3公式・過去のイベント一覧</a>
+      </p>
+    </main>
+
+    {% include footer.html %}
+  </div>
+</body>
+
+</html>
