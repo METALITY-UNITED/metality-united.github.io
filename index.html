@@ -43,6 +43,7 @@
 <body>
   <!-- 背景 -->
   <div class="background">
+    {% include embers.html %}
     <!--コンテンツ-->
     <div class="container">
 
@@ -51,16 +52,15 @@
 
       <!-- キービジュアル -->
       <div class="keyvisual">
-
         <!-- カルーセル -->
 
-        <section class="splide" aria-label="carousel" data-splide='{"type":"loop","perPage":1,"autoplay":true}'>
+        <section class="splide" aria-label="最新のビジュアル" data-splide='{"type":"loop","perPage":1,"pauseOnHover":true,"pauseOnFocus":true,"interval":6000}'>
           <div class="splide__track">
             <ul class="splide__list">
               {% for keyvisual in site.data.keyvisuals %}
               <li class="splide__slide">
-                <a href="{{keyvisual.link}}" target="_blank">
-                  <img src="{{keyvisual.image}}" />
+                <a href="{{keyvisual.link}}" target="_blank" rel="noopener noreferrer">
+                  <img src="{{keyvisual.image}}" alt="METALITY UNITEDの最新ビジュアル" />
                 </a>
               </li>
               {% endfor %}
@@ -70,6 +70,10 @@
       </div>
 
       <section class="demo-cta" aria-label="音源試聴">
+        <div class="demo-cta-copy">
+          <p class="demo-cta-eyebrow">LISTEN NOW // OFFICIAL DEMO</p>
+          <p class="demo-cta-description">METALITY UNITEDのサウンドを体感する</p>
+        </div>
         <a href="https://demo.metality.band" target="_blank" rel="noopener noreferrer">
           <i class="fa-solid fa-headphones" aria-hidden="true"></i>
           楽曲を聴く
@@ -78,18 +82,20 @@
       </section>
 
       <!-- News -->
-      <div class="news" id="news">
+      <section class="news" id="news">
         <h2>News</h2>
-        <section>
-          <ul>
-            {% for post in site.posts limit:3 %}
-            <li>
-              <a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} {{ post.title }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-        </section>
-      </div>
+        <ul class="news-list">
+          {% for post in site.posts limit:3 %}
+          <li>
+            <a href="{{ post.url }}">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+              <span class="news-title">{{ post.title }}</span>
+              <span class="news-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
 
 
       <!-- Release -->
@@ -100,7 +106,7 @@
           <div class="release-contents-item">
             <a href="{{work.link}}">
               <div class="release-contents-item-img-field">
-                <img src="{{work.image}}" />
+                <img src="{{work.image}}" alt="{{work.title}} album artwork" loading="lazy" decoding="async" />
               </div>
               <p>{{work.title}}</p>
             </a>
@@ -501,15 +507,15 @@
         </a>
 
       </div><!-- コンテンツここまで -->
+      {% include footer.html %}
     </div><!--火の粉の背景画像ここまで -->
-
-    {% include footer.html %}
   </div><!-- 黒背景ここまで -->
 
   <!-- splide-->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script>
-    new Splide('.splide').mount();
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    new Splide('.splide', { autoplay: !prefersReducedMotion }).mount();
   </script>
 
   <!-- スクロールと内容切り替えを共存させたい クリックされたリンクに対応するラジオボタンがチェックされるようにする-->

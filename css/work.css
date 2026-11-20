@@ -1,0 +1,411 @@
+.work-hero {
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    radial-gradient(ellipse at 18% 50%, rgba(212, 51, 60, 0.18), transparent 38rem),
+    linear-gradient(115deg, #121318, #090a0d 72%);
+}
+
+.work-hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 8rem);
+  padding-block: clamp(4rem, 8vw, 9rem);
+}
+
+.work-artwork {
+  width: min(100%, 44rem);
+  aspect-ratio: 1;
+  justify-self: center;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(8, 9, 12, 0.72);
+  box-shadow: 0 2.4rem 7rem rgba(0, 0, 0, 0.48), 0 0 5rem rgba(212, 51, 60, 0.1);
+}
+
+.work-artwork img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-heading {
+  min-width: 0;
+}
+
+.work-eyebrow {
+  margin-bottom: 1.2rem;
+  color: var(--color-accent-bright);
+  font-family: 'Jost', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.work-title {
+  margin: 0;
+  font-family: 'Jost', 'Noto Sans JP', sans-serif;
+  font-size: clamp(3.2rem, 4.8vw, 5.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.work-copy {
+  margin-top: 2rem;
+  color: #d3d3d7;
+  font-size: clamp(1.7rem, 2vw, 2.2rem);
+  line-height: 1.7;
+}
+
+.work-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 3.2rem;
+}
+
+.work-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 5rem;
+  padding: 1.2rem 2rem;
+  border: 1px solid rgba(255, 89, 99, 0.5);
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.work-action-primary {
+  background: linear-gradient(135deg, #c82b36, #901a24);
+  box-shadow: 0 0 2.4rem rgba(212, 51, 60, 0.18);
+}
+
+.work-action-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 3rem rgba(212, 51, 60, 0.35);
+}
+
+.work-action:focus-visible,
+.work-back-link:focus-visible,
+.work-top-link:focus-visible {
+  outline: 2px solid var(--color-accent-bright);
+  outline-offset: 4px;
+}
+
+.work-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  grid-template-areas: "track booth";
+  align-items: start;
+  gap: 2.4rem;
+  padding-block: clamp(4rem, 7vw, 7rem);
+}
+
+.work-details > .booth {
+  grid-area: booth;
+}
+
+.work-details > .track {
+  grid-area: track;
+}
+
+.work-details > .booth,
+.work-details > .track {
+  min-width: 0;
+  margin: 0;
+  padding: clamp(2rem, 3vw, 3.2rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, rgba(20, 22, 28, 0.94), rgba(13, 14, 18, 0.94));
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.22);
+}
+
+.work-details h2 {
+  margin-bottom: 2.4rem;
+  font-size: clamp(2.8rem, 4vw, 3.6rem);
+}
+
+.work-details .booth ul {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.work-details .booth li {
+  margin: 0;
+  list-style: none;
+}
+
+.work-details .booth li a,
+.work-details .booth > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.8rem;
+  padding: 1rem 1.6rem;
+  border: 1px solid rgba(255, 89, 99, 0.42);
+  background: linear-gradient(135deg, rgba(200, 43, 54, 0.88), rgba(111, 21, 29, 0.88));
+  color: var(--color-text);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.work-details .booth li a:hover,
+.work-details .booth > a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+.work-details .booth > div {
+  margin-top: 1.2rem;
+  padding: 1.8rem;
+  border-left: 2px solid var(--color-accent);
+  background: rgba(255, 255, 255, 0.04);
+  color: #d2d2d6;
+  line-height: 1.7;
+}
+
+.work-details .booth h3 {
+  margin: 0 0 0.8rem;
+  color: var(--color-text);
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
+.work-details .booth > div a {
+  color: var(--color-accent-bright);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  overflow-wrap: anywhere;
+}
+
+.work-details .track-flex {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.4rem;
+}
+
+.work-details .track-list h3,
+.work-details .position h3 {
+  margin: 0 0 1.2rem;
+  color: #a4a6ad;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.work-details .track-list {
+  min-width: 0;
+  margin: 0;
+}
+
+.work-details .track-list ul,
+.work-details .track-list ol {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.work-details .track-list li {
+  margin: 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.035);
+  color: #e4e3e1;
+  list-style: none;
+}
+
+.work-details .position {
+  min-width: 0;
+  margin: 0;
+}
+
+.work-details .position table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 1.35rem;
+  line-height: 1.6;
+}
+
+.work-details .position td:first-child {
+  width: 60%;
+}
+
+.work-details .position td:last-child {
+  width: 40%;
+}
+
+.work-details .position td {
+  padding: 0.8rem 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-wrap: anywhere;
+}
+
+.work-details .position td:first-child {
+  color: #a4a6ad;
+}
+
+.work-details .position td:last-child {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.work-video-section {
+  padding-block: clamp(4rem, 7vw, 7rem);
+  border-block: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(89, 19, 27, 0.16), transparent 44rem),
+    linear-gradient(
+      to bottom,
+      rgba(11, 12, 16, 0.88) 0%,
+      rgba(11, 12, 16, 0.62) 42%,
+      rgba(11, 12, 16, 0.28) 76%,
+      rgba(11, 12, 16, 0) 100%
+    );
+}
+
+.work-video-heading {
+  margin-bottom: 2.4rem;
+}
+
+.work-video-heading .work-eyebrow {
+  margin-bottom: 0.8rem;
+}
+
+.work-video-heading h2 {
+  margin: 0;
+  font-size: clamp(2.8rem, 4vw, 3.6rem);
+}
+
+.work-video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #000;
+  box-shadow: 0 2.4rem 6rem rgba(0, 0, 0, 0.4);
+}
+
+.work-video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.work-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: 2.4rem 4rem;
+}
+
+.work-back-link,
+.work-top-link {
+  color: #d3d3d6;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: color 180ms ease;
+}
+
+.work-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.work-back-link:hover,
+.work-top-link:hover {
+  color: var(--color-accent-bright);
+}
+
+@media (max-width: 900px) {
+  .work-hero-content {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 3.2rem;
+  }
+
+  .work-details {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "track"
+      "booth";
+  }
+}
+
+@media (max-width: 640px) {
+  .work-hero-content {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+    padding-block: 3.2rem 4rem;
+  }
+
+  .work-artwork {
+    width: min(100%, 32rem);
+  }
+
+  .work-title {
+    font-size: clamp(3.2rem, 10vw, 4.4rem);
+  }
+
+  .work-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 2.4rem;
+  }
+
+  .work-action {
+    width: 100%;
+  }
+
+  .work-details {
+    gap: 1.6rem;
+    padding-block: 3.2rem;
+  }
+
+  .work-details > .booth,
+  .work-details > .track {
+    padding: 2rem;
+  }
+
+  .work-details .track-flex {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .work-navigation {
+    padding-bottom: 3.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-action,
+  .work-details .booth li a,
+  .work-details .booth > a,
+  .work-back-link,
+  .work-top-link {
+    transition: none;
+  }
+
+  .work-action-primary:hover,
+  .work-details .booth li a:hover,
+  .work-details .booth > a:hover {
+    transform: none;
+  }
+}
