@@ -335,6 +335,75 @@
   color: var(--color-accent-bright);
 }
 
+.work-lyrics-section {
+  padding-block: clamp(4rem, 7vw, 7rem);
+  border-block: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, rgba(20, 22, 28, 0.72), rgba(13, 14, 18, 0.72));
+}
+
+.work-lyrics-heading {
+  margin-bottom: 2.4rem;
+}
+
+.work-lyrics-heading .work-eyebrow {
+  margin-bottom: 0.8rem;
+}
+
+.work-lyrics-heading h2 {
+  margin: 0;
+  font-size: clamp(2.8rem, 4vw, 3.6rem);
+}
+
+.work-lyrics-list {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.work-lyrics {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 9, 12, 0.72);
+}
+
+.work-lyrics summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 6rem;
+  padding: 1.6rem 2rem;
+  color: var(--color-text);
+  font-size: clamp(1.6rem, 2vw, 1.9rem);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.work-lyrics summary::-webkit-details-marker {
+  display: none;
+}
+
+.work-lyrics summary i {
+  color: var(--color-accent-bright);
+  transition: transform 180ms ease;
+}
+
+.work-lyrics[open] summary i {
+  transform: rotate(180deg);
+}
+
+.work-lyrics summary:focus-visible {
+  outline: 2px solid var(--color-accent-bright);
+  outline-offset: -4px;
+}
+
+.work-lyrics-text {
+  padding: 0 2rem 2.4rem;
+  color: #dedde1;
+  font-size: clamp(1.5rem, 1.8vw, 1.7rem);
+  line-height: 2;
+  white-space: normal;
+}
+
 @media (max-width: 900px) {
   .work-hero-content {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
