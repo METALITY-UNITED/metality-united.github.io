@@ -91,7 +91,9 @@
               {% for keyvisual in site.data.keyvisuals %}
               <li class="splide__slide">
                 <a href="{{keyvisual.link}}" target="_blank" rel="noopener noreferrer">
-                  <img src="{{keyvisual.image}}" alt="METALITY UNITEDの最新ビジュアル" />
+                  <img src="{{keyvisual.image}}" width="1280" height="720" alt="METALITY UNITEDの最新ビジュアル"
+                    {% if forloop.first %}fetchpriority="high" loading="eager"{% else %}loading="lazy"{% endif %}
+                    decoding="async" />
                 </a>
               </li>
               {% endfor %}
@@ -547,7 +549,40 @@
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script>
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    new Splide('.splide', { autoplay: !prefersReducedMotion }).mount();
+    const splideElement = document.querySelector('.splide');
+    let carousel;
+
+    function mountCarousel() {
+      if (!carousel) {
+        carousel = new Splide(splideElement, {
+          type: 'loop',
+          perPage: 1,
+          pauseOnHover: true,
+          pauseOnFocus: true,
+          interval: 6000,
+          autoplay: !prefersReducedMotion
+        }).mount();
+        return;
+      }
+
+      carousel.refresh();
+    }
+
+    if (document.readyState === 'complete') {
+      requestAnimationFrame(mountCarousel);
+    } else {
+      window.addEventListener('load', function () {
+        requestAnimationFrame(mountCarousel);
+      }, { once: true });
+    }
+
+    window.addEventListener('pageshow', function () {
+      if (carousel) {
+        requestAnimationFrame(function () {
+          carousel.refresh();
+        });
+      }
+    });
   </script>
 
   <!-- スクロールと内容切り替えを共存させたい クリックされたリンクに対応するラジオボタンがチェックされるようにする-->
