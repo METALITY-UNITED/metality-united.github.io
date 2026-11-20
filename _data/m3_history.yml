@@ -1,0 +1,97 @@
+- event: M3-2026春
+  space: え-19a
+  source: https://www.m3net.jp/attendance/circle2026s.php
+  works:
+    - title: DEMOLITION VOL.2
+      url: https://demo.metality.band/
+      new_release: true
+    - title: DEMOLITION
+      url: https://demo.metality.band/
+    - title: DIVINE PUNISHMENT
+      url: /divinepunishment.html
+    - title: BLACK WINGS
+      url: /blackwings.html
+    - title: NIGHT OF DEATH
+      url: /nightofdeath.html
+    - title: LOST BLESSING
+      url: /lostblessing.html
+
+- event: M3-2025秋
+  space: コ-17a
+  source: https://www.m3net.jp/attendance/circle2025f.php
+  works:
+    - title: DEMOLITION
+      url: https://demo.metality.band/
+      new_release: true
+    - title: DIVINE PUNISHMENT
+      url: /divinepunishment.html
+    - title: BLACK WINGS
+      url: /blackwings.html
+    - title: NIGHT OF DEATH
+      url: /nightofdeath.html
+    - title: LOST BLESSING
+      url: /lostblessing.html
+
+- event: M3-2025春
+  space: お-06a
+  source: https://www.m3net.jp/attendance/circle2025s.php
+  works:
+    - title: DIVINE PUNISHMENT
+      url: /divinepunishment.html
+      new_release: true
+    - title: BLACK WINGS
+      url: /blackwings.html
+    - title: NIGHT OF DEATH
+      url: /nightofdeath.html
+    - title: LOST BLESSING
+      url: /lostblessing.html
+
+- event: M3-2024秋
+  space: シ-11a
+  source: https://www.m3net.jp/event/circle2024f.php
+  works:
+    - title: BLACK WINGS
+      url: /blackwings.html
+    - title: NIGHT OF DEATH
+      url: /nightofdeath.html
+    - title: LOST BLESSING
+      url: /lostblessing.html
+
+- event: M3-2024春
+  space: コ-20b
+  source: https://www.m3net.jp/event/circle2024s.php
+  works:
+    - title: BLACK WINGS
+      url: /blackwings.html
+      new_release: true
+    - title: NIGHT OF DEATH
+      url: /nightofdeath.html
+    - title: LOST BLESSING
+      url: /lostblessing.html
+
+- event: M3-2023秋
+  space: サ-20b
+  source: https://www.m3net.jp/event/circle2023f.php
+  works:
+    - title: NIGHT OF DEATH
+      url: /nightofdeath.html
+    - title: LOST BLESSING
+      url: /lostblessing.html
+
+- event: M3-2023春
+  space: G-22b
+  source: https://www.m3net.jp/event/circle2023s.php
+  works:
+    - title: NIGHT OF DEATH
+      url: /nightofdeath.html
+      new_release: true
+    - title: LOST BLESSING
+      url: /lostblessing.html
+
+- event: M3-2022秋
+  space: F-21a
+  source: https://www.m3net.jp/event/circle2022f.php
+  works:
+    - title: LOST BLESSING
+      url: /lostblessing.html
+      new_release: true
