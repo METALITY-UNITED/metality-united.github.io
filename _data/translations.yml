@@ -1,0 +1,25 @@
+ja:
+  news: News
+  events: Events
+  release: Release
+  band: Band
+  demo: Demo
+  contact: Contact
+  listen: 楽曲を聴く
+  listen_description: METALITY UNITEDのサウンドを体感する
+  archive: 過去のNewsも見る
+  language_ja: 日本語
+  language_en: English
+
+en:
+  news: News
+  events: Events
+  release: Releases
+  band: Band
+  demo: Demo
+  contact: Contact
+  listen: Listen
+  listen_description: Experience the sound of METALITY UNITED
+  archive: View more news
+  language_ja: Japanese
+  language_en: English

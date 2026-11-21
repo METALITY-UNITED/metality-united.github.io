@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og:http://ogp.me/ns#">
+<html lang="{{ page.lang | default: 'ja' }}" prefix="og:http://ogp.me/ns#">
 
 <head>
   <meta charset="UTF-8">
@@ -32,9 +32,15 @@
 
     <main class="container news-archive">
       <h1 class="news-archive-title">News</h1>
+      {% if page.lang == "en" %}
+      <p class="news-archive-description">Updates and announcements from METALITY UNITED.</p>
+      {% else %}
       <p class="news-archive-description">METALITY UNITEDからのお知らせ一覧です。</p>
+      {% endif %}
       <ul class="news-list">
-        {% for post in site.posts %}
+        {% assign current_lang = page.lang | default: "ja" %}
+        {% assign localized_posts = site.posts | where: "lang", current_lang %}
+        {% for post in localized_posts %}
         <li>
           <a href="{{ post.url }}">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
@@ -44,6 +50,11 @@
         </li>
         {% endfor %}
       </ul>
+      {% if localized_posts.size == 0 %}
+        {% if current_lang == "en" %}
+        <p class="news-archive-description">English updates are coming soon.</p>
+        {% endif %}
+      {% endif %}
     </main>
 
     {% include footer.html %}

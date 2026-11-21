@@ -1,0 +1,5 @@
+<nav class="language-switcher" aria-label="{% if lang == 'en' %}Language{% else %}言語{% endif %}">
+  <a href="/" hreflang="ja" lang="ja"{% if lang != "en" %} aria-current="page"{% endif %}>{{ t.language_ja }}</a>
+  <span class="language-switcher-separator" aria-hidden="true">/</span>
+  <a href="/en/" hreflang="en" lang="en"{% if lang == "en" %} aria-current="page"{% endif %}>{{ t.language_en }}</a>
+</nav>

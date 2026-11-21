@@ -1,15 +1,41 @@
 - title: DIVINE PUNISHMENT
   image: images/work/DIVINEPUNISHMENT.webp
   link: divinepunishment.html
+  tracks:
+    - DIVINE PUNISHMENT
+    - DIVINE PUNISHMENT (Instrumental)
+  apple_music: https://music.apple.com/song/1830160888
+  spotify: https://open.spotify.com/track/2pjDA3vPXkOIB3dZGoB47e
 
 - title: BLACK WINGS
   image: images/work/BLACKWINGS.webp
   link: blackwings.html
+  tracks:
+    - BLACK WINGS
+    - BLACK WINGS (Instrumental)
+  apple_music: https://music.apple.com/jp/album/black-wings-single/1773209410
+  spotify: https://open.spotify.com/track/0PIRaajKGkmojgCnPDHLpC
 
 - title: NIGHT OF DEATH
   image: images/work/NIGHTOFDEATH.webp
   link: nightofdeath.html
+  tracks:
+    - NIGHT OF DEATH
+    - NIGHT OF DEATH (Orchestral Instrumental)
+    - Instrumental Version
+    - Instrumental Version (Without Chorus)
+    - First Demo Version
+  apple_music: https://music.apple.com/song/1701930033
+  spotify: https://open.spotify.com/track/1JD7Om8Bz8ESRtNOR6mgAO
 
 - title: LOST BLESSING
   image: images/work/LOSTBLESSING.webp
   link: lostblessing.html
+  tracks:
+    - Blessing (SE)
+    - Saint Catastrophe
+    - March of Black Rebellion
+    - Saint Catastrophe (Instrumental)
+    - March of Black Rebellion (Instrumental)
+  apple_music: https://music.apple.com/song/1710714033
+  spotify: https://open.spotify.com/track/6yLZKopeYai3VRtBdMl9Vo

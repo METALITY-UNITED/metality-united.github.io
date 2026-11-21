@@ -1,0 +1,333 @@
+---
+layout: null
+lang: en
+translation_key: home
+---
+<!DOCTYPE html>
+<html lang="en" prefix="og:http://ogp.me/ns#">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>METALITY UNITED | Official Website</title>
+  <meta name="description" content="METALITY UNITED is a symphonic melodic power metal band formed with VTuber members. Explore releases, live events, news, and official music.">
+  <meta name="robots" content="index, follow">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#000">
+  <link rel="canonical" href="https://metality.band/en/">
+  <link rel="alternate" hreflang="ja" href="https://metality.band/" />
+  <link rel="alternate" hreflang="en" href="https://metality.band/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://metality.band/" />
+
+  <meta property="og:title" content="METALITY UNITED | Official Website">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metality.band/en/">
+  <meta property="og:image" content="https://metality.band/images/logo-band-ogp.png">
+  <meta property="og:image:alt" content="METALITY UNITED logo">
+  <meta property="og:description" content="A VTuber symphonic melodic power metal band from Japan.">
+  <meta property="og:site_name" content="METALITY UNITED">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@metality_united">
+  <meta name="twitter:title" content="METALITY UNITED | Official Website">
+  <meta name="twitter:description" content="A VTuber symphonic melodic power metal band from Japan.">
+  <meta name="twitter:image" content="https://metality.band/images/logo-band-ogp.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "METALITY UNITED",
+    "alternateName": "METALITY UNITED",
+    "url": "https://metality.band/",
+    "inLanguage": "en",
+    "image": "https://metality.band/images/logo-band-ogp.png",
+    "description": "A symphonic melodic power metal band formed with VTuber members",
+    "genre": ["Symphonic Metal", "Melodic Power Metal", "Heavy Metal"],
+    "sameAs": [
+      "https://x.com/metality_united",
+      "https://www.youtube.com/@METALITYUNITED"
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://unpkg.com/destyle.css@3.0.2/destyle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/icon/favicon.ico">
+  <link rel="icon" sizes="192x192" href="/icon/android-chrome-192x192.png">
+</head>
+
+<body>
+  <div class="background">
+    {% include embers.html %}
+    <div class="container">
+      {% include header.html %}
+
+      <section class="keyvisual" aria-label="Latest visual">
+        <div class="splide" aria-label="Latest visual">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for keyvisual in site.data.keyvisuals %}
+              <li class="splide__slide">
+                <a href="{{ keyvisual.link }}" target="_blank" rel="noopener noreferrer">
+                  <img src="{{ keyvisual.image }}" width="1280" height="720"
+                    alt="Latest METALITY UNITED visual" {% if forloop.first %}fetchpriority="high" loading="eager"{% else %}loading="lazy"{% endif %} decoding="async">
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-cta" aria-label="Official demo">
+        <div class="demo-cta-copy">
+          <p class="demo-cta-eyebrow">LISTEN NOW // OFFICIAL DEMO</p>
+          <p class="demo-cta-description">Experience the sound of METALITY UNITED</p>
+        </div>
+        <a href="https://demo.metality.band" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-headphones" aria-hidden="true"></i>
+          Listen now
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <section class="release" id="release">
+        <h2>Releases</h2>
+        <div class="release-contents">
+          {% for work in site.data.works %}
+          <div class="release-contents-item">
+            <button class="release-modal-trigger" type="button" data-dialog="release-dialog-{{ forloop.index }}" aria-haspopup="dialog" aria-label="View {{ work.title }} and tracks">
+              <div class="release-contents-item-img-field">
+                <img src="/{{ work.image }}" alt="{{ work.title }} cover artwork" loading="lazy" decoding="async">
+              </div>
+              <p>{{ work.title }}</p>
+            </button>
+            <dialog class="release-dialog" id="release-dialog-{{ forloop.index }}" aria-labelledby="release-dialog-title-{{ forloop.index }}">
+              <div class="release-dialog-layout">
+                <img class="release-dialog-artwork" src="/{{ work.image }}" alt="{{ work.title }} cover artwork">
+                <div class="release-dialog-content">
+                  <div class="release-dialog-heading">
+                    <h3 id="release-dialog-title-{{ forloop.index }}">{{ work.title }}</h3>
+                    <button class="release-dialog-close" type="button" aria-label="Close">×</button>
+                  </div>
+                  <h4>Track</h4>
+                  <ol class="release-dialog-tracks">
+                    {% for track in work.tracks %}
+                    <li><span>{{ forloop.index | prepend: "00" | slice: -2, 2 }}</span>{{ track }}</li>
+                    {% endfor %}
+                  </ol>
+                  <div class="release-dialog-streaming">
+                    <a href="{{ work.apple_music }}" target="_blank" rel="noopener noreferrer">
+                      <i class="fa-brands fa-apple" aria-hidden="true"></i>
+                      Apple Music
+                    </a>
+                    <a href="{{ work.spotify }}" target="_blank" rel="noopener noreferrer">
+                      <i class="fa-brands fa-spotify" aria-hidden="true"></i>
+                      Spotify
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </dialog>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+
+  <div class="under-background">
+    <div class="container">
+      <section class="band" id="band">
+        <div class="bandclass" id="bandclass">
+          <div class="band-h2">
+            <h2>Band</h2>
+          </div>
+
+          <input id="tab-senri" type="radio" name="tab-member" checked>
+          <input id="tab-sintone" type="radio" name="tab-member">
+          <input id="tab-alse" type="radio" name="tab-member">
+          <input id="tab-ginko" type="radio" name="tab-member">
+          <input id="tab-niu" type="radio" name="tab-member">
+
+          <div class="member">
+            <label class="tab-member" for="tab-senri">
+              <a href="#bandclass" onclick="scrollToBandClass('tab-senri')">
+                <div><img src="/images/member/member-small-senri.webp" id="samune-senri" alt="Naruse Senri"></div>
+              </a>
+            </label>
+            <label class="tab-member" for="tab-sintone">
+              <a href="#bandclass" onclick="scrollToBandClass('tab-sintone')">
+                <div><img src="/images/member/member-small-sintone.webp" id="samune-sintone" alt="SINTONE"></div>
+              </a>
+            </label>
+            <label class="tab-member" for="tab-alse">
+              <a href="#bandclass" onclick="scrollToBandClass('tab-alse')">
+                <div><img src="/images/member/member-small-aruse.webp" id="samune-alse" alt="Aruse"></div>
+              </a>
+            </label>
+            <label class="tab-member" for="tab-ginko">
+              <a href="#bandclass" onclick="scrollToBandClass('tab-ginko')">
+                <div><img src="/images/member/member-small-ginko.webp" id="samune-ginko" alt="GINKO"></div>
+              </a>
+            </label>
+            <label class="tab-member" for="tab-niu">
+              <a href="#bandclass" onclick="scrollToBandClass('tab-niu')">
+                <div><img src="/images/member/member-small-niu.webp" id="samune-niu" alt="niu"></div>
+              </a>
+            </label>
+          </div>
+
+          <div class="tab01" id="tab01">
+            <div class="tab_contents" id="panel-senri">
+              <div class="band-contents">
+                <div class="member-contents">
+                  <div class="member-contents-name">Vocals / Naruse Senri</div>
+                  <div class="member-contents-account">
+                    <div class="member-contents-x">
+                      <a href="https://twitter.com/3900senri" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> @3900senri</a>
+                    </div>
+                    <div class="member-contents-youtube">
+                      <a href="https://www.youtube.com/channel/UCINhXRrneYdfhbz8QQka6WA" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> Naruse Senri</a>
+                    </div>
+                  </div>
+                  <div class="member-contents-introduction-field">
+                    <p>A singing VTuber sharing passionate vocals and peaceful moments.</p>
+                    <p>Vocals, lyrics, design, and video production.</p>
+                  </div>
+                </div>
+                <div class="member-illust"><img src="/images/member/member-large-senri.webp" alt="Naruse Senri"></div>
+              </div>
+            </div>
+
+            <div class="tab_contents" id="panel-sintone">
+              <div class="band-contents">
+                <div class="member-contents">
+                  <div class="member-contents-name">Bass / SINTONE</div>
+                  <div class="member-contents-account">
+                    <div class="member-contents-x">
+                      <a href="https://twitter.com/SINTONEmetal" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> @SINTONEmetal</a>
+                    </div>
+                  </div>
+                  <div class="member-contents-introduction-field">
+                    <p>A bassist who loves heavy metal and melodic metal.</p>
+                  </div>
+                </div>
+                <div class="member-illust"><img src="/images/member/member-large-sintone.webp" alt="SINTONE"></div>
+              </div>
+            </div>
+
+            <div class="tab_contents" id="panel-alse">
+              <div class="band-contents">
+                <div class="member-contents">
+                  <div class="member-contents-name">Guitar and Mixing / Aruse</div>
+                  <div class="member-contents-account">
+                    <div class="member-contents-x">
+                      <a href="https://twitter.com/alcestic5150" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> @alcestic5150</a>
+                    </div>
+                    <div class="member-contents-youtube">
+                      <a href="https://www.youtube.com/@miyatenmk-sounds1691" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> Miyaten MK-Sounds</a>
+                    </div>
+                  </div>
+                  <div class="member-contents-introduction-field">
+                    <p>METALITY UNITED guitarist and mixing engineer.</p>
+                  </div>
+                </div>
+                <div class="member-illust"><img src="/images/member/member-large-aruse.webp" alt="Aruse"></div>
+              </div>
+            </div>
+
+            <div class="tab_contents" id="panel-ginko">
+              <div class="band-contents">
+                <div class="member-contents">
+                  <div class="member-contents-name">Drums / GINKO</div>
+                  <div class="member-contents-account">
+                    <div class="member-contents-x">
+                      <a href="https://twitter.com/GINKO_dr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> @GINKO_dr</a>
+                    </div>
+                    <div class="member-contents-youtube">
+                      <a href="https://www.youtube.com/channel/UC-2EabkUYZGT1N3CKJTWG7A" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> GINKO Channel</a>
+                    </div>
+                  </div>
+                  <div class="member-contents-introduction-field">
+                    <p>A virtual shark drummer from Japan.</p>
+                  </div>
+                </div>
+                <div class="member-illust"><img src="/images/member/member-large-ginko.webp" alt="GINKO"></div>
+              </div>
+            </div>
+
+            <div class="tab_contents" id="panel-niu">
+              <div class="band-contents">
+                <div class="member-contents">
+                  <div class="member-contents-name">Composer and Arranger / niu</div>
+                  <div class="member-contents-account">
+                    <div class="member-contents-x">
+                      <a href="https://twitter.com/niusounds" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> @niusounds</a>
+                    </div>
+                  </div>
+                  <div class="member-contents-introduction-field">
+                    <p>Composer and arranger for METALITY UNITED.</p>
+                  </div>
+                </div>
+                <div class="member-illust"><img src="/images/member/member-large-niu.webp" alt="niu"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <a href="#top">
+        <div class="top-icon">
+          <i class="fa-solid fa-circle-chevron-up"></i>
+        </div>
+      </a>
+    </div>
+    {% include footer.html %}
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    document.querySelectorAll('.splide').forEach(function (element) {
+      new Splide(element).mount();
+    });
+
+    document.querySelectorAll('.release-modal-trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var dialog = document.getElementById(trigger.dataset.dialog);
+        if (dialog && typeof dialog.showModal === 'function') {
+          dialog.showModal();
+        }
+      });
+    });
+
+    document.querySelectorAll('.release-dialog').forEach(function (dialog) {
+      var closeButton = dialog.querySelector('.release-dialog-close');
+      closeButton.addEventListener('click', function () {
+        dialog.close();
+      });
+      dialog.addEventListener('click', function (event) {
+        if (event.target === dialog) {
+          dialog.close();
+        }
+      });
+    });
+
+    function scrollToBandClass(menuId) {
+      var radio = document.getElementById(menuId);
+      if (radio) {
+        radio.checked = true;
+      }
+      var target = document.getElementById('bandclass');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+</body>
+
+</html>
