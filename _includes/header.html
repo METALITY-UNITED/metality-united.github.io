@@ -1,3 +1,19 @@
+{% assign lang = page.lang | default: "ja" %}
+{% assign t = site.data.translations[lang] %}
+{% if lang == "en" %}
+  {% assign base = "/en" %}
+  {% assign release_url = "/en/#release" %}
+  {% assign band_url = "/en/#band" %}
+  {% assign news_url = "/en/news/" %}
+  {% assign events_url = "/events/" %}
+{% else %}
+  {% assign base = "" %}
+  {% assign release_url = "/#release" %}
+  {% assign band_url = "/#band" %}
+  {% assign news_url = "/news/" %}
+  {% assign events_url = "/events/" %}
+{% endif %}
+
 <div class="header" id="top">
   <!-- ロゴ -->
   <div class="header-logo">
@@ -8,12 +24,15 @@
   <!-- PCナビゲーション -->
   <div class="pc-nav">
     <ul class="pc-nav-list">
-      <li><a href="/news/">News</a></li>
-      <li><a href="/events/">Events</a></li>
-      <li><a href="/#release">Release</a></li>
-      <li><a href="/#band">Band</a></li>
-      <li><a href="https://demo.metality.band" target="_blank" rel="noopener noreferrer">Demo</a></li>
-      <li><a href="https://forms.gle/JSjHXPXwSD7tEskF6" target="_blank" rel="noopener noreferrer">Contact</a></li>
+      {% if lang != "en" %}
+      <li><a href="{{ news_url }}">{{ t.news }}</a></li>
+      <li><a href="{{ events_url }}">{{ t.events }}</a></li>
+      {% endif %}
+      <li><a href="{{ release_url }}">{{ t.release }}</a></li>
+      <li><a href="{{ band_url }}">{{ t.band }}</a></li>
+      <li><a href="https://demo.metality.band" target="_blank" rel="noopener noreferrer">{{ t.demo }}</a></li>
+      <li><a href="https://forms.gle/JSjHXPXwSD7tEskF6" target="_blank" rel="noopener noreferrer">{{ t.contact }}</a></li>
+      <li>{% include language-switcher.html %}</li>
       <li><a href="https://twitter.com/metality_united" target="_blank" rel="noopener noreferrer"><i
             class="fa-brands fa-x-twitter"></i></a>
       </li>
@@ -28,12 +47,15 @@
 
     <div class="hamburger-menu-contents">
       <ul class="sp-nav-list">
-        <li><a href="/news/">News</a></li>
-        <li><a href="/events/">Events</a></li>
-        <li><a href="/#release">Release</a></li>
-        <li><a href="/#band">Band</a></li>
-        <li><a href="https://demo.metality.band" target="_blank" rel="noopener noreferrer">Demo</a></li>
-        <li><a href="https://forms.gle/JSjHXPXwSD7tEskF6" target="_blank" rel="noopener noreferrer">Contact</a></li>
+        {% if lang != "en" %}
+        <li><a href="{{ news_url }}">{{ t.news }}</a></li>
+        <li><a href="{{ events_url }}">{{ t.events }}</a></li>
+        {% endif %}
+        <li><a href="{{ release_url }}">{{ t.release }}</a></li>
+        <li><a href="{{ band_url }}">{{ t.band }}</a></li>
+        <li><a href="https://demo.metality.band" target="_blank" rel="noopener noreferrer">{{ t.demo }}</a></li>
+        <li><a href="https://forms.gle/JSjHXPXwSD7tEskF6" target="_blank" rel="noopener noreferrer">{{ t.contact }}</a></li>
+        <li>{% include language-switcher.html %}</li>
         <li><a href="https://twitter.com/metality_united" target="_blank" rel="noopener noreferrer"><i
               class="fa-brands fa-x-twitter"></i></a>
         </li>

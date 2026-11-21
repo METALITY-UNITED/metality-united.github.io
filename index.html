@@ -1,4 +1,6 @@
 ---
+lang: ja
+translation_key: home
 ---
 <!DOCTYPE html>
 <html lang="ja" prefix="og:http://ogp.me/ns#">
@@ -12,6 +14,9 @@
   <meta name="description" content="VTuberメンバーによるシンフォニックメロディックパワーメタルバンド METALITY UNITED の公式サイト。楽曲、ライブ情報、最新ニュースを紹介します。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://metality.band/">
+  <link rel="alternate" hreflang="ja" href="https://metality.band/" />
+  <link rel="alternate" hreflang="en" href="https://metality.band/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://metality.band/" />
   <meta property="og:title" content="VTuberメタルバンド METALITY UNITED" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://metality.band/" />
@@ -161,23 +166,13 @@
               <h2>Band</h2>
             </div>
 
-            <input id="tab-senri" type="radio" name="tab-member">
+            <input id="tab-senri" type="radio" name="tab-member" checked>
             <input id="tab-sintone" type="radio" name="tab-member">
             <input id="tab-alse" type="radio" name="tab-member">
             <input id="tab-ginko" type="radio" name="tab-member">
             <input id="tab-niu" type="radio" name="tab-member">
-            <input id="tab-metalityunited" type="radio" name="tab-member" checked>
-
-
             <!-- 他のメンバーイラスト -->
             <div class="member">
-
-              <label class="tab-member" for="tab-metalityunited">
-                <a href="#bandclass" onclick="scrollToBandClass('tab-metalityunited')">
-                  <div><img src="images/logo-samune.png" id="samune-logo" alt="ロゴサムネ" /></div>
-                </a>
-              </label>
-
               <label class="tab-member" for="tab-senri">
                 <a href="#bandclass" onclick="scrollToBandClass('tab-senri')">
                   <div>
@@ -474,59 +469,6 @@
                 </div><!-- 紹介部分 -->
               </div>
 
-              <!-- バンド -->
-              <div class="tab_contents" id="tab-metalityunited">
-                <div class="band-contents">
-
-                  <!-- アカウント達・紹介文 -->
-                  <div class="member-contents">
-
-                    <!-- 名前 -->
-                    <div class="member-contents-name">
-                      METALITY UNITED
-                    </div>
-                    <!-- アカウント達 -->
-                    <div class="member-contents-account">
-                      <!-- Xアカウント -->
-                      <div class="member-contents-x">
-                        <a href="https://twitter.com/metality_united" target="_blank" rel="noopener noreferrer">
-                          <i class="fa-brands fa-x-twitter"></i>
-                          @metality_united
-                        </a>
-                      </div>
-                      <!-- YouTubeアカウント -->
-                      <div class="member-contents-youtube">
-                        <a href="https://www.youtube.com/@METALITYUNITED" target="_blank" rel="noopener noreferrer">
-                          <i class="fa-brands fa-youtube"></i>
-                          METALITY UNITED
-                        </a>
-                      </div>
-                    </div>
-
-                    <!-- 紹介文 紹介文ボックスの固定がしたい-->
-                    <div class="member-contents-introduction-field">
-                      <p>
-                        メタバース生まれのメタルバンド。<br><br>
-                        メンバーはYouTubeやVRchatなどで活動をしている。<br><br>
-                      </p>
-                    </div><!-- 紹介文 -->
-                  </div><!-- アカウント達・紹介文 -->
-
-
-                  <!-- メンバーイラスト -->
-                  <div class="band-logo-pc">
-                    <div class="member-illust">
-                      <img src="images/logo-band.png" alt="METALITYUNITEDロゴ" />
-                    </div>
-                  </div>
-                  <div class="band-logo-sp">
-                    <div class="member-illust">
-                      <img src="images/logo-band-sp.png" alt="METALITYUNITEDロゴ" />
-                    </div>
-                  </div>
-
-                </div><!-- 紹介部分 -->
-              </div>
             </div><!-- 切り替え -->
             <!-- 紹介部分 -->
           </div>

@@ -307,6 +307,29 @@ img {
   transition: color 180ms ease;
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: 0.8rem;
+  font-family: 'Jost', 'Noto Sans JP', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+}
+
+.language-switcher a {
+  opacity: 0.65;
+}
+
+.language-switcher a[aria-current="page"] {
+  color: var(--color-accent-bright);
+  opacity: 1;
+}
+
+.language-switcher-separator {
+  opacity: 0.35;
+}
+
 .pc-nav-list a:focus-visible,
 .sp-nav-list a:focus-visible {
   outline: 2px solid var(--color-accent-bright);
@@ -978,9 +1001,176 @@ img {
   transition: transform 320ms ease, filter 320ms ease;
 }
 
-.release-contents-item img:hover {
+.release-contents-item-img-field img:hover {
   transform: scale(1.045);
   filter: brightness(1.08);
+}
+
+.release-modal-trigger {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.release-modal-trigger:focus-visible {
+  outline: 2px solid var(--color-accent-bright);
+  outline-offset: 5px;
+}
+
+.release-dialog {
+  width: min(94vw, 120rem);
+  max-height: 88vh;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.8rem;
+  background: #0d0f13;
+  color: var(--color-text);
+  box-shadow: 0 3rem 8rem rgba(0, 0, 0, 0.72);
+}
+
+.release-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.release-dialog-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  min-width: 0;
+  align-items: stretch;
+}
+
+.release-dialog .release-dialog-artwork {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  align-self: center;
+  object-fit: cover;
+}
+
+.release-dialog-content {
+  min-width: 0;
+  overflow-y: auto;
+  padding: clamp(2.4rem, 3vw, 3.6rem);
+}
+
+.release-dialog-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3.2rem;
+}
+
+.release-dialog-heading h3 {
+  font-family: 'Jost', 'Noto Sans JP', sans-serif;
+  font-size: clamp(2.8rem, 4vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.release-dialog-close {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  align-self: flex-start;
+  width: 4.2rem;
+  height: 4.2rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+  font-family: Arial, sans-serif;
+  font-size: 2.8rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.release-dialog-content h4 {
+  margin-bottom: 1.2rem;
+  color: var(--color-accent-bright);
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.release-dialog-tracks {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.release-dialog-tracks li {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+.release-dialog-tracks li span {
+  color: var(--color-accent-bright);
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+}
+
+.release-dialog-streaming {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.4rem;
+}
+
+.release-dialog-streaming a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-width: 16rem;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+  font-weight: 700;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.release-dialog-streaming a:hover {
+  border-color: var(--color-accent-bright);
+  background: rgba(212, 51, 60, 0.16);
+}
+
+.release-dialog-streaming a:focus-visible {
+  outline: 2px solid var(--color-accent-bright);
+  outline-offset: 3px;
+}
+
+@media (max-width: 769px) {
+  .release-dialog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .release-dialog-artwork {
+    max-height: 38vh;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+
+  .release-dialog-content {
+    max-height: 46vh;
+    overflow-y: auto;
+  }
 }
 
 /* CD情報を横並びにする */
@@ -1171,6 +1361,10 @@ img {
   text-align: center;
 }
 
+.bandclass .member {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .member img {
   width: 80%;
   border: 1px solid rgba(255, 255, 255, 0.22);
@@ -1246,6 +1440,14 @@ input[name="tab-member"] {
 #tab-ginko:checked~.tab01 #tab-ginko,
 #tab-niu:checked~.tab01 #tab-niu,
 #tab-metalityunited:checked~.tab01 #tab-metalityunited {
+  display: block;
+}
+
+#tab-senri:checked~.tab01 #panel-senri,
+#tab-sintone:checked~.tab01 #panel-sintone,
+#tab-alse:checked~.tab01 #panel-alse,
+#tab-ginko:checked~.tab01 #panel-ginko,
+#tab-niu:checked~.tab01 #panel-niu {
   display: block;
 }
 
